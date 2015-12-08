@@ -41,3 +41,5 @@ gem 'gravtastic'
 gem 'devise_invitable', '~> 1.5.2'
 gem 'friendly_id', '~> 5.1.0'
 gem "font-awesome-rails"
+
+gem 'rails_12factor', group: :production

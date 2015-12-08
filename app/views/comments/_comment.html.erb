@@ -1,0 +1,14 @@
+<div class="comments">
+  <div class="commentPic">
+    <%= image_tag comment.user.gravatar_url %>
+  </div>
+  <div class="commentBody">
+    <%= div_for comment, class: "panel" do %>
+      <div class="panel-body">
+        <p class="text-muted small">Posted by <%= comment.user.name %> <%= local_time_ago comment.created_at %></p>
+        <p><%= markdownify comment.body %></p>
+      </div>
+    <% end %>
+  </div>
+</div>
+

@@ -1,0 +1,14 @@
+<div class="panel highlight">
+    <%= link_to conversation, style: "text-decoration: none;" do %>
+      <div class="panel-body">
+        <div class="threads">
+          <div class="threadSubject">
+            <h3><%= conversation.subject %></h3>
+          </div>
+          <div class="threadCount">
+            <h3><span class="fa fa-comment-o"></span>     <%= conversation.post_count %></h3>
+          </div>
+        </div>
+      </div>
+    <% end %>
+</div>

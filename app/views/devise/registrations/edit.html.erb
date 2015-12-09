@@ -29,7 +29,10 @@
 
               <hr>
               </br>
-
+              <span><%= image_tag current_user.gravatar_url, style: "border-radius: 50%;" %></span><span> Visit <a href="gravatar.com">Gravatar</a> to update your avatar.</span>
+              </br>
+              <hr>
+              </br>
               <%= form_for(resource, :as => resource_name, :url => user_registration_path(resource), :html => { :method => :put }) do |f| %>
                 <%= devise_error_messages! %>
 
@@ -71,8 +74,6 @@
               <hr>
 
               <%= button_to "Cancel my account", user_registration_path(resource_name), :data => { :confirm => "Are you sure?" }, :method => :delete, class: "btn btn-danger" %>
-
-              <%= link_to "Back", :back %>
             </div>
           </div>
         </div>

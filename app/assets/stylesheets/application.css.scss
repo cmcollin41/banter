@@ -11,8 +11,6 @@
  * file per style scope.
  *
  *= require font-awesome
- *= require_tree .
- *= require_self
  */
 
 
@@ -115,15 +113,6 @@ body{
   }
 }
 
-.highlight{
-
-  &:hover{
-    border-bottom: 3px solid $brand-primary;
-    h3{
-      text-decoration: none;
-    }
-  }
-}
 
 
 //////////////// MEDIA QUERIES ///////////////////////

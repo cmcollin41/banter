@@ -7,15 +7,34 @@
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
-<body>
+  <body>
+    <% flash.each do |key, value| %>
+      <div class="alert-box <%= key %>" style="margin-bottom: 0px; padding: 25px; width: 100%; text-align: center;">
+        <%= value %>
+        <a href="#" class="close">&times;</a>
+      </div>
+    <% end %>
 
-<%= render "shared/navbar" %>
+    <%= render "shared/navbar" %>
 
-<div class="container">
-  <%= flash.notice %>
-  <%= flash.alert %>
-  <%= yield %>
-</div>
+    <div class="container">
+      <%= yield %>
+    </div>
 
-</body>
+  </body>
 </html>
+
+<script>
+
+$(document).ready(function(){
+  setTimeout(function() {
+      $('.alert-box').slideUp('slow', function(){
+      });
+}, 3000);
+  $('.close').click(function(){
+    $('.alert-box').slideUp('slow', function(){
+    });
+  });
+
+});
+</script>

@@ -1,14 +1,17 @@
-<div class="panel">
-    <%= link_to conversation, style: "text-decoration: none;" do %>
-      <div class="panel-body">
-        <div class="threads">
-          <div class="threadSubject">
-            <h3><%= conversation.subject %></h3>
-          </div>
-          <div class="threadCount">
-            <h3><span><%= image_tag conversation.user.gravatar_url, width: "40px;", style: "border-radius: 50%; margin-right: 15px" %></span><span class="fa fa-comment-o">&nbsp;</span><%= conversation.post_count %></h3>
-          </div>
-        </div>
-      </div>
-    <% end %>
+
+<div class="threads">
+  <%= link_to conversation, style: "text-decoration: none;" do %>
+    <div class="threadLikes" id="conversation_<%= conversation.id %>_likes">
+      <%= render partial: "likes", locals: {conversation: conversation} %>
+    </div>
+    <div class="threadSubject">
+      <h3><%= link_to conversation.subject, conversation %></h3>
+    </div>
+    <div class="threadAvatar">
+      <%= image_tag conversation.user.avatar_url  %>
+    </div>
+    <div class="threadComments">
+      <span class="fa fa-comment-o">&nbsp;</span><span><%= conversation.post_count %></span>
+    </div>
+  <% end %>
 </div>

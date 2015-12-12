@@ -1,14 +1,15 @@
 <div class="comments">
   <div class="commentPic">
-    <%= image_tag comment.user.gravatar_url %>
+    <%= image_tag comment.user.avatar_url %>
   </div>
   <div class="commentBody">
-    <%= div_for comment, class: "panel" do %>
-      <div class="panel-body">
-        <p class="text-muted small">Posted by <%= comment.user.name %> <%= local_time_ago comment.created_at %></p>
-        <p><%= markdownify comment.body %></p>
-      </div>
+    <%= div_for comment do %>
+      <p class="text-muted small">Posted by <%= comment.user.name %> <%= local_time_ago comment.created_at %></p>
+      <p><%= markdownify comment.body %></p>
     <% end %>
+  </div>
+  <div class="commentDelete">
+    <%= link_to 'Delete', "#", method: :delete %>
   </div>
 </div>
 

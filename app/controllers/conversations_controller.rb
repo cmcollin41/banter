@@ -4,11 +4,12 @@ class ConversationsController < ApplicationController
 
   def index
     @q = Conversation.search(params[:q])
-    @conversations = @q.result(distinct: true).order(created_at: :desc)
+    @conversations = @q.result(distinct: true).order(likes_count: :desc)
   end
 
   def show
     @comment = Comment.new
+
   end
 
   def new

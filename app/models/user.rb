@@ -8,7 +8,7 @@
 #  reset_password_token   :string
 #  reset_password_sent_at :datetime
 #  remember_created_at    :datetime
-#  sign_in_count          :integer          default("0"), not null
+#  sign_in_count          :integer          default(0), not null
 #  current_sign_in_at     :datetime
 #  last_sign_in_at        :datetime
 #  current_sign_in_ip     :string
@@ -25,7 +25,7 @@
 #  invitation_limit       :integer
 #  invited_by_id          :integer
 #  invited_by_type        :string
-#  invitations_count      :integer          default("0")
+#  invitations_count      :integer          default(0)
 #
 # Indexes
 #
@@ -38,8 +38,6 @@
 #
 
 class User < ActiveRecord::Base
-  include Gravtastic
-  gravtastic
   acts_as_paranoid
 
   # Include default devise modules. Others available are:
@@ -50,23 +48,15 @@ class User < ActiveRecord::Base
 
   has_many :conversations
   has_many :comments
+  has_many :likes
 
-  def self.assign_from_row(row)
-    user = User.where(email: row[:email]).first_or_initialize
-    user.assign_attributes row.to_hash.slice(:first_name, :last_name)
-    user
+  def likes?(conversation)
+    conversation.likes.where(user_id: id).any?
   end
 
-  def self.to_csv
-    attributes = %w{id email name}
-
-    CSV.generate(headers: true) do |csv|
-      csv << attributes
-
-      all.each do |user|
-        csv << attributes.map{ |attr| user.send(attr) }
-      end
-    end
+  def avatar_url
+    hash = Digest::MD5.hexdigest(email)
+    "http://www.gravatar.com/avatar/#{hash}"
   end
 
   def name

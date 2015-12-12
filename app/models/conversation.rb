@@ -2,13 +2,14 @@
 #
 # Table name: conversations
 #
-#  id         :integer          not null, primary key
-#  user_id    :integer
-#  subject    :string
-#  created_at :datetime         not null
-#  updated_at :datetime         not null
-#  deleted_at :datetime
-#  slug       :string
+#  id          :integer          not null, primary key
+#  user_id     :integer
+#  subject     :string
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
+#  deleted_at  :datetime
+#  slug        :string
+#  likes_count :integer          default(0), not null
 #
 # Indexes
 #
@@ -23,6 +24,7 @@ class Conversation < ActiveRecord::Base
 
   belongs_to :user
   has_many :comments
+  has_many :likes
   has_many :users, through: :comments
 
   accepts_nested_attributes_for :comments
@@ -33,5 +35,9 @@ class Conversation < ActiveRecord::Base
 
   def post_count
     self.comments.count
+  end
+
+  def like_count
+    self.likes.count
   end
 end

@@ -1,23 +1,27 @@
 <div class="container">
   <div class="row">
-    <div class="col-sm-12 col-md-10">
-    <%= link_to "Back", root_path %>
-    <h1><%= @conversation.subject %></h1>
-    <p class="text-muted small">Created by <%= @conversation.user.name %></p>
+    <div class="col-sm-12 col-md-10 col-md-offset-1">
+
+    <div class="conversationTopic">
+        <div class="conversationLikes" id="conversation_<%= @conversation.id %>_likes">
+          <%= render partial: "likes", locals: {conversation: @conversation} %>
+        </div>
+        <div class="conversationSubject">
+          <h1><%= @conversation.subject %></h1>
+          <p class="text-muted small">Created by <%= @conversation.user.name %></p>
+        </div>
+    </div>
+
+
 
     <%= render @conversation.comments %>
 
-    <hr/>
     <% if user_signed_in? %>
     <%= render partial: "comments/form" %>
     <% else %>
     <p> Commenting is limited to those invited by the community. Join the waiting list! </p>
     <p> <%= link_to "Login to comment", new_user_session_path %></p>
     <% end %>
-    </div>
-    <div class="col-sm-12 col-md-2 advertisement">
-      <p>Sponsored by</p>
-      <p>Bam Bam's BBQ<p>
     </div>
   </div>
 </div>

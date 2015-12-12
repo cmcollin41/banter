@@ -1,6 +1,6 @@
 # == Schema Information
 #
-# Table name: forum_posts
+# Table name: comments
 #
 #  id              :integer          not null, primary key
 #  conversation_id :integer

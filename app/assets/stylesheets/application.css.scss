@@ -10,17 +10,19 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
+ *= require_tree .
  *= require font-awesome
+ *= require_self
  */
 
 
 $brand-primary: #2196F3;
-$navbar-default-bg: #2196F3;
-$navbar-default-color: white;
-$navbar-default-link-color: white;
+$navbar-default-bg: white;
+$navbar-default-color: $brand-primary;
+$navbar-default-link-color: $brand-primary;
 
-@import "bootstrap";
 @import "font-awesome";
+@import "bootstrap";
 
 ////////////////////// @MIXINS ////////////////////////////
 
@@ -52,7 +54,32 @@ a,p,h6,h5,h4,h3,h2,h1{
 }
 
 body{
-  background: #FAFAFA;
+  background: #ffffff;
+  margin-top: 70px;
+}
+
+.center{
+  text-align: center;
+  margin: 0 auto;
+}
+
+.conversations{
+  margin: 0 auto;
+  margin-top: 7%;
+}
+
+.conversationTopic{
+  @include inline-wrapper();
+  padding: 25px 0 25px 0;
+  border-bottom: 1px solid #EEEEEE;
+  .conversationLikes{
+    @include inline-element(50px, middle, 1.4rem);
+    text-align: center;
+  }
+  .conversationSubject{
+    @include inline-element(calc(100% - 50px), middle, 1.6rem);
+    text-align: left;
+  }
 }
 
 .advertisement {
@@ -66,8 +93,10 @@ body{
 
 .comments{
   @include inline-wrapper();
+    border-bottom: 1px solid #EEEEEE;
+    padding: 10px;
     .commentPic{
-      @include inline-element(42px, top, 1rem);
+      @include inline-element(50px, top, 1rem);
       text-align: center;
       img{
         border-radius: 50%;
@@ -75,23 +104,57 @@ body{
       }
     }
     .commentBody{
-       @include inline-element(calc(100% - 42px), top, 1.6rem);
+       @include inline-element(calc(100% - 50px), middle, 1.6rem);
       text-align: left;
+    }
+    .commentDelete{
+      display: none;
+    }
+    &:last-child{
+      border-bottom: none;
+    }
+    &:hover{
+      background: #FAFAFA;
+      cursor: pointer;
     }
 }
 
 
 .threads{
   @include inline-wrapper();
+  margin: 0 auto;
+  padding: 25px;
+  border-bottom: 1px solid #EEEEEE;
+    &:last-child{
+      border-bottom: none;
+    }
+    .threadLikes{
+      @include inline-element(calc(10% - 40px), middle, 1.4rem);
+      text-align: center;
+    }
     .threadSubject{
-      @include inline-element(50%, top, 1rem);
+      @include inline-element(calc(80% - 40px), middle, 1.4rem);
       text-align: left;
     }
-    .threadCount{
-       @include inline-element(calc(50%), top, 1.6rem);
+    .threadAvatar{
+       @include inline-element(40px, middle, 1.4rem);
       text-align: right;
+      img {
+        width: 40px;
+        border-radius: 50%;
+      }
+    }
+    .threadComments{
+       @include inline-element(calc(10% - 40px), middle, 1.4rem);
+      text-align: center;
+    }
+    &:hover{
+      background: #FAFAFA;
+      cursor: pointer;
     }
 }
+
+
 .commentPic{
   border-radius: 50%;
   height: 35px;
@@ -113,8 +176,13 @@ body{
   }
 }
 
+//////////////// NAVBAR //////////////////////////////
 
-
+.navbar{
+  -moz-box-shadow:    3px 0px 5px 3px #EEEEEE;
+  -webkit-box-shadow: 3px 0px 5px 3px #EEEEEE;
+  box-shadow:         3px 0px 5px 3px #EEEEEE;
+}
 //////////////// MEDIA QUERIES ///////////////////////
 @media only screen 
   and (min-device-width: 414px) 

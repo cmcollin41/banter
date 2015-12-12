@@ -11,24 +11,8 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
-
-
-group :development, :test do
-  gem 'byebug'
-  gem 'web-console', '~> 2.0.0.beta4'
-  gem 'spring'
-end
-
-gem "devise", github: "plataformatec/devise", branch: "lm-rails-4-2"
+gem "devise", github: "plataformatec/devise"
 gem 'bootstrap-sass', '~> 3.2.0.2'
-
-group :development do
-  gem "annotate"
-  gem "better_errors"
-  gem "binding_of_caller"
-  gem "letter_opener"
-end
-
 gem 'sucker_punch'
 gem 'ransack', github: 'activerecord-hackery/ransack', branch: 'rails-4.2'
 gem 'local_time', '~> 1.0.0'
@@ -37,10 +21,21 @@ gem 'github-markdown', '~> 0.6.7'
 gem 'gemoji', '~> 2.1.0'
 gem 'sanitize', '~> 3.0.3'
 gem 'paranoia', '~> 2.1.0'
-gem 'gravtastic'
 gem 'devise_invitable', '~> 1.5.2'
 gem 'friendly_id', '~> 5.1.0'
-gem "font-awesome-rails"
-gem 'rename'
+gem 'font-awesome-rails'
+
+group :development, :test do
+  gem 'byebug'
+  gem 'web-console', '~> 2.0.0.beta4'
+  gem 'spring'
+end
+
+group :development do
+  gem "annotate"
+  gem "better_errors"
+  gem "binding_of_caller"
+  gem "letter_opener"
+end
 
 gem 'rails_12factor', group: :production

@@ -76,5 +76,5 @@ Rails.application.configure do
 
   config.active_job.queue_adapter = :sucker_punch
 
-  config.action_mailer.default_url_options = { :host => 'fathomless-refuge-2395.herokuapp.com' }
+  config.action_mailer.default_url_options = { :host => 'bantersports.herokuapp.com' }
 end

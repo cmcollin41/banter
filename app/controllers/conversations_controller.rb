@@ -15,6 +15,7 @@ class ConversationsController < ApplicationController
   def new
     @conversation = Conversation.new
     @conversation.comments.new
+     @conversation.polls.new
   end
 
   def create
@@ -35,6 +36,6 @@ class ConversationsController < ApplicationController
     end
 
     def conversation_params
-      params.require(:conversation).permit(:subject, comments_attributes: [:body])
+      params.require(:conversation).permit(:subject, comments_attributes: [:body], polls_attributes: [:option_a, :option_b])
     end
 end

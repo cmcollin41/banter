@@ -71,7 +71,6 @@ body{
 .conversationTopic{
   @include inline-wrapper();
   padding: 25px 0 25px 0;
-  border-bottom: 1px solid #EEEEEE;
   .conversationLikes{
     @include inline-element(50px, middle, 1.4rem);
     text-align: center;
@@ -79,6 +78,30 @@ body{
   .conversationSubject{
     @include inline-element(calc(100% - 50px), middle, 1.6rem);
     text-align: left;
+  }
+}
+
+.polls{
+  @include inline-wrapper();
+  .optionA{
+    @include inline-element(49%, middle, 1.6rem);
+    text-align: center;
+    background-color: $brand-primary;
+    color: white;
+    padding: 20px 0 20px 0;
+    &:hover{
+      cursor: pointer;
+    }
+  }
+  .optionB{
+    @include inline-element(49%, middle, 1.6rem);
+    text-align: center;
+    background-color: #42A5F5;
+    color: white;
+    padding: 20px 0 20px 0;
+    &:hover{
+      cursor: pointer;
+    }
   }
 }
 
@@ -93,8 +116,8 @@ body{
 
 .comments{
   @include inline-wrapper();
-    border-bottom: 1px solid #EEEEEE;
-    padding: 10px;
+    border-top: 1px solid #EEEEEE;
+    padding: 5px;
     .commentPic{
       @include inline-element(50px, top, 1rem);
       text-align: center;

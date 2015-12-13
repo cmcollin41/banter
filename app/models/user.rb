@@ -49,6 +49,7 @@ class User < ActiveRecord::Base
   has_many :conversations
   has_many :comments
   has_many :likes
+  has_many :polls
 
   def likes?(conversation)
     conversation.likes.where(user_id: id).any?

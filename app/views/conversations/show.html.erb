@@ -8,10 +8,11 @@
         </div>
         <div class="conversationSubject">
           <h1><%= @conversation.subject %></h1>
-          <p class="text-muted small">Created by <%= @conversation.user.name %></p>
         </div>
     </div>
-
+    <%= render @conversation.polls %>
+    </br>
+    <p class="text-muted small">Created by <%= @conversation.user.name %></p>
 
 
     <%= render @conversation.comments %>

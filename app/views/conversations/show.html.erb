@@ -11,7 +11,7 @@
         </div>
     </div>
 
-    <% if @conversation.polls.present? %>
+    <% if !@poll.option_a.blank? && !@poll.option_b.blank? %>
       <%= render partial: "answers/answer" %>
     <% end %>
 

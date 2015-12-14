@@ -50,9 +50,14 @@ class User < ActiveRecord::Base
   has_many :comments
   has_many :likes
   has_many :polls
+  has_many :answers
 
   def likes?(conversation)
     conversation.likes.where(user_id: id).any?
+  end
+
+  def answers?(conversation)
+    conversation.answers.where(user_id: id).any?
   end
 
   def avatar_url

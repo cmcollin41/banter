@@ -9,18 +9,21 @@ class ConversationsController < ApplicationController
 
   def show
     @comment = Comment.new
-
+    @answer = Answer.new
+    @poll = @conversation.polls.find_by(params[:conversation_id])
   end
 
   def new
     @conversation = Conversation.new
     @conversation.comments.new
-     @conversation.polls.new
+    @conversation.polls.new
+    @conversation.answers.new
   end
 
   def create
     @conversation = current_user.conversations.new conversation_params
     @conversation.comments.first.user_id = current_user.id
+    @conversation.polls.first.user_id = current_user.id
 
     if @conversation.save
       redirect_to @conversation
@@ -36,6 +39,6 @@ class ConversationsController < ApplicationController
     end
 
     def conversation_params
-      params.require(:conversation).permit(:subject, comments_attributes: [:body], polls_attributes: [:option_a, :option_b])
+      params.require(:conversation).permit(:subject, comments_attributes: [:body], polls_attributes: [:option_a, :option_b], answers_attributes: [:answer_one, :answer_two])
     end
 end

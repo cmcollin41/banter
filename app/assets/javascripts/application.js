@@ -16,3 +16,16 @@
 //= require turbolinks
 //= require local_time
 //= require_tree .
+
+
+$(document).ready(function(){ 
+  
+  function togglePolls() {
+    document.getElementById("polls").classList.toggle('active');
+  }
+
+  var polls = document.getElementById("pollsToggle");
+  polls.addEventListener("click", togglePolls, false);
+
+});
+

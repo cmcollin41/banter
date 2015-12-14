@@ -63,6 +63,20 @@ body{
   margin: 0 auto;
 }
 
+
+input[type="radio"]{
+  display: none;
+}
+
+.author{
+  margin: 20px 0px;
+}
+
+
+.active{
+  display: none;
+}
+
 .conversations{
   margin: 0 auto;
   margin-top: 7%;
@@ -70,13 +84,13 @@ body{
 
 .conversationTopic{
   @include inline-wrapper();
-  padding: 25px 0 25px 0;
+  padding: 25px 0px 10px 0px;
   .conversationLikes{
-    @include inline-element(50px, middle, 1.4rem);
+    @include inline-element(25px, top, 1.4rem);
     text-align: center;
   }
   .conversationSubject{
-    @include inline-element(calc(100% - 50px), middle, 1.6rem);
+    @include inline-element(calc(100% - 50px), top, 1.6rem);
     text-align: left;
   }
 }
@@ -85,13 +99,13 @@ body{
   @include inline-wrapper();
   .optionA{
     @include inline-element(49%, middle, 1.6rem);
-    text-align: center;
-    background-color: $brand-primary;
-    color: white;
-    padding: 20px 0 20px 0;
-    &:hover{
-      cursor: pointer;
-    }
+      text-align: center;
+      background-color: $brand-primary;
+      color: white;
+      padding: 20px 0 20px 0;
+      &:hover{
+        cursor: pointer;
+      }
   }
   .optionB{
     @include inline-element(49%, middle, 1.6rem);
@@ -102,6 +116,24 @@ body{
     &:hover{
       cursor: pointer;
     }
+  }
+}
+
+.results{
+  @include inline-wrapper();
+  .resultOne{
+    @include inline-element(49%, middle, 1.6rem);
+      text-align: center;
+      background-color: $brand-primary;
+      color: white;
+      padding: 20px 0 20px 0;
+  }
+  .resultTwo{
+    @include inline-element(49%, middle, 1.6rem);
+    text-align: center;
+    background-color: #42A5F5;
+    color: white;
+    padding: 20px 0 20px 0;
   }
 }
 

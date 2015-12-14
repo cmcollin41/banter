@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   resources :conversations do
     resources :comments, module: :conversations
     resources :polls, module: :conversations
+    resources :answers, module: :conversations
     resource :like, module: :conversations
   end
 

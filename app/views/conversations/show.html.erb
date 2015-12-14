@@ -10,19 +10,23 @@
           <h1><%= @conversation.subject %></h1>
         </div>
     </div>
-    <%= render @conversation.polls %>
-    </br>
-    <p class="text-muted small">Created by <%= @conversation.user.name %></p>
+
+    <% if @conversation.polls.present? %>
+      <%= render partial: "answers/answer" %>
+    <% end %>
+
+    <p class="text-muted small author">Created by <%= @conversation.user.name %></p>
 
 
     <%= render @conversation.comments %>
 
     <% if user_signed_in? %>
-    <%= render partial: "comments/form" %>
+        <%= render partial: "comments/form" %>
     <% else %>
-    <p> Commenting is limited to those invited by the community. Join the waiting list! </p>
-    <p> <%= link_to "Login to comment", new_user_session_path %></p>
+        <p> Commenting is limited to those invited by the community. Join the waiting list! </p>
+        <p> <%= link_to "Login to comment", new_user_session_path %></p>
     <% end %>
+
     </div>
   </div>
 </div>

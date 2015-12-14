@@ -24,8 +24,7 @@ $(document).ready(function(){
     document.getElementById("polls").classList.toggle('active');
   }
 
-  var polls = document.getElementById("pollsToggle");
-  polls.addEventListener("click", togglePolls, false);
+  document.getElementById("pollsToggle").addEventListener("click", togglePolls, false);
 
 });
 

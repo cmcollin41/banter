@@ -7,7 +7,6 @@ class Conversations::PollsController < ApplicationController
     @poll.user = current_user
 
     if @poll.save
-      @poll send_notifications!
       redirect_to conversation_path(@conversation), notice: "Successfully posted!"
     else
       redirect_to @conversation, alert: "Unable to save your poll"

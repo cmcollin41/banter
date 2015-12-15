@@ -14,6 +14,13 @@ class Conversations::CommentsController < ApplicationController
     end
   end
 
+  def destroy
+    @conversation = Conversation.friendly.find(params[:conversation_id])
+    @comment = @conversation.comments.find(params[:id])
+    @comment.destroy
+    redirect_to @conversation
+  end
+
   private
 
     def set_conversation

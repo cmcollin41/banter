@@ -24,14 +24,14 @@ class Conversation < ActiveRecord::Base
   acts_as_paranoid
 
   belongs_to :user
-  has_many :comments
-  has_many :polls
-  has_many :answers
-  has_many :likes
-  has_many :users, through: :comments
-  has_many :uswers, through: :likes
-  has_many :users, through: :polls
-  has_many :users, through: :answers
+  has_many :comments, dependent: :destroy
+  has_many :polls, dependent: :destroy
+  has_many :answers, dependent: :destroy
+  has_many :likes, dependent: :destroy
+  has_many :users, through: :comments, dependent: :destroy
+  has_many :users, through: :likes, dependent: :destroy
+  has_many :users, through: :polls, dependent: :destroy
+  has_many :users, through: :answers, dependent: :destroy
 
 
   accepts_nested_attributes_for :comments

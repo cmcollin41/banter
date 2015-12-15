@@ -20,7 +20,7 @@ $brand-primary: #2196F3;
 $navbar-default-bg: white;
 $navbar-default-color: $brand-primary;
 $navbar-default-link-color: $brand-primary;
-
+@import url(https://fonts.googleapis.com/css?family=Roboto);
 @import "font-awesome";
 @import "bootstrap";
 
@@ -49,7 +49,8 @@ $navbar-default-link-color: $brand-primary;
 
 /////////////////// @STANDARD /////////////////////////////
 
-a,p,h6,h5,h4,h3,h2,h1{
+a,p,h6,h5,h4,h3,h2,h1,label{
+  font-family: Roboto, sans-serif;
   text-decoration: none;
 }
 
@@ -86,11 +87,12 @@ input[type="radio"]{
   @include inline-wrapper();
   padding: 25px 0px 10px 0px;
   .conversationLikes{
-    @include inline-element(25px, top, 1.4rem);
+    @include inline-element(40px, middle, 1.6rem);
     text-align: center;
+    margin-top: 18px;
   }
   .conversationSubject{
-    @include inline-element(calc(100% - 50px), top, 1.6rem);
+    @include inline-element(calc(100% - 40px), middle, 1.6rem);
     text-align: left;
   }
 }
@@ -159,18 +161,17 @@ input[type="radio"]{
       }
     }
     .commentBody{
-       @include inline-element(calc(100% - 50px), middle, 1.6rem);
+       @include inline-element(calc(100% - 100px), middle, 1.6rem);
       text-align: left;
-    }
-    .commentDelete{
-      display: none;
-    }
-    &:last-child{
-      border-bottom: none;
     }
     &:hover{
       background: #FAFAFA;
       cursor: pointer;
+      .commentDelete{
+        @include inline-element(50px, middle, 1.6rem);
+        text-align: center;
+        color: red;
+      }
     }
 }
 
@@ -180,19 +181,16 @@ input[type="radio"]{
   margin: 0 auto;
   padding: 25px;
   border-bottom: 1px solid #EEEEEE;
-    &:last-child{
-      border-bottom: none;
-    }
     .threadLikes{
-      @include inline-element(calc(10% - 40px), middle, 1.4rem);
+      @include inline-element(calc(10% - 45px), middle, 1.4rem);
       text-align: center;
     }
     .threadSubject{
-      @include inline-element(calc(80% - 40px), middle, 1.4rem);
+      @include inline-element(calc(80% - 45px), middle, 1.4rem);
       text-align: left;
     }
     .threadAvatar{
-       @include inline-element(40px, middle, 1.4rem);
+      @include inline-element(40px, middle, 1.4rem);
       text-align: right;
       img {
         width: 40px;
@@ -200,12 +198,19 @@ input[type="radio"]{
       }
     }
     .threadComments{
-       @include inline-element(calc(10% - 40px), middle, 1.4rem);
-      text-align: center;
+      @include inline-element(calc(10% - 45px), middle, 1.4rem);
+      text-align: right;
+    }
+    .threadDelete{
+      @include inline-element(5px, middle, 1.4rem);
+      text-align: right;
     }
     &:hover{
       background: #FAFAFA;
       cursor: pointer;
+    }
+    &:last-child{
+      border-bottom: none;
     }
 }
 

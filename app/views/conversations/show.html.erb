@@ -11,7 +11,7 @@
         </div>
     </div>
 
-    <% if !@poll.option_a.blank? && !@poll.option_b.blank? %>
+    <% if @poll.option_a.present? %>
       <%= render partial: "answers/answer" %>
     <% end %>
 

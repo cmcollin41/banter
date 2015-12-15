@@ -46,11 +46,11 @@ class User < ActiveRecord::Base
 
   validates :email, presence: true
 
-  has_many :conversations
-  has_many :comments
-  has_many :likes
-  has_many :polls
-  has_many :answers
+  has_many :conversations, dependent: :destroy
+  has_many :comments, dependent: :destroy
+  has_many :likes, dependent: :destroy
+  has_many :polls, dependent: :destroy
+  has_many :answers, dependent: :destroy
 
   def likes?(conversation)
     conversation.likes.where(user_id: id).any?

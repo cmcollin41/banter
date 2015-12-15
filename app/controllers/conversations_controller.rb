@@ -32,6 +32,12 @@ class ConversationsController < ApplicationController
     end
   end
 
+  def destroy
+    @conversation = Conversation.friendly.find(params[:id])
+    @conversation.destroy
+    redirect_to root_path
+  end
+
   private
 
     def set_conversation

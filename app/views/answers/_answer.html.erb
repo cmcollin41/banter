@@ -1,7 +1,7 @@
 <% if user_signed_in? && current_user.answers?(@conversation)%>
   <div class="results">
     <div class="resultOne">
-      <%= @poll.option_a %>
+      <span class="answerName"><%= @poll.option_a %></span>
       <%= ((@conversation.answer_one.to_f / @conversation.answers_count.to_f) * 100).round %>%
     </div>
     <div class="resultTwo">

@@ -132,10 +132,18 @@ input[type="radio"]{
   @include inline-wrapper();
   .resultOne{
     @include inline-element(49%, middle, 1.6rem);
+      position: relative;
       text-align: center;
       background-color: $brand-primary;
       color: white;
       padding: 20px 0 20px 0;
+      & span{
+        position: absolute;
+        top: 5px;
+        left: 5px;
+        font-size: 1rem;
+        font-weight: 700;
+      }
   }
   .resultTwo{
     @include inline-element(49%, middle, 1.6rem);

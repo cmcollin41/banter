@@ -11,6 +11,7 @@ class ConversationsController < ApplicationController
     @comment = Comment.new
     @answer = Answer.new
     @poll = @conversation.polls.find_by(params[:conversation_id])
+    @comments = @conversation.comments.order(created_at: :asc);
   end
 
   def new

@@ -18,7 +18,7 @@
     <p class="text-muted small author">Created by <%= @conversation.user.name %></p>
 
 
-    <%= render @conversation.comments %>
+    <%= render @comments %>
 
     <% if user_signed_in? %>
         <%= render partial: "comments/form" %>

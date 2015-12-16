@@ -141,16 +141,24 @@ input[type="radio"]{
         position: absolute;
         top: 5px;
         left: 5px;
-        font-size: 1rem;
+        font-size: 1.2rem;
         font-weight: 700;
       }
   }
   .resultTwo{
     @include inline-element(49%, middle, 1.6rem);
+    position: relative;
     text-align: center;
     background-color: #42A5F5;
     color: white;
     padding: 20px 0 20px 0;
+    & span{
+      position: absolute;
+      top: 5px;
+      left: 5px;
+      font-size: 1.2rem;
+      font-weight: 700;
+    }
   }
   .resultTotal{
     @include inline-element(100%, middle, 1rem);

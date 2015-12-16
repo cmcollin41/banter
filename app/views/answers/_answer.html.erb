@@ -5,7 +5,7 @@
       <%= ((@conversation.answer_one.to_f / @conversation.answers_count.to_f) * 100).round %>%
     </div>
     <div class="resultTwo">
-      <%= @poll.option_b %>
+      <span class="answerName"><%= @poll.option_b %></span>
       <%= ((@conversation.answer_two.to_f / @conversation.answers_count.to_f) * 100).round %>%
     </div>
     <div class="resultTotal text-muted">

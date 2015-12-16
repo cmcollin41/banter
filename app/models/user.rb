@@ -46,6 +46,8 @@ class User < ActiveRecord::Base
   devise :invitable, :database_authenticatable, :registerable, :recoverable, :rememberable, :trackable
 
   validates :email, presence: true
+  validates :first_name, presence: true
+  validates :last_name, presence: true
 
   has_many :conversations, dependent: :destroy
   has_many :comments, dependent: :destroy

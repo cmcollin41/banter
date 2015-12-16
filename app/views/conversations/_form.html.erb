@@ -1,3 +1,4 @@
+
 <%= form_for @conversation do |f| %>
   <div class="form-group">
     <%= f.text_field :subject, placeholder: "Subject", class: "form-control" %>
@@ -26,3 +27,16 @@
     <%= f.submit class: "btn btn-primary" %>
   </div>
 <% end %>
+
+<script>
+$(document).ready(function(){ 
+  
+  function togglePolls() {
+    document.getElementById("polls").classList.toggle('active');
+  }
+
+  document.getElementById("pollsToggle").addEventListener("click", togglePolls, false);
+
+});
+
+</scrip>

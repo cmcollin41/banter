@@ -8,6 +8,9 @@
       <%= @poll.option_b %>
       <%= ((@conversation.answer_two.to_f / @conversation.answers_count.to_f) * 100).round %>%
     </div>
+    <div class="resultTotal text-muted">
+      Total Votes: <%= @conversation.answers_count %>
+    </div>
   </div>
 <% else %>
   <%= render partial: "answers/form" %>

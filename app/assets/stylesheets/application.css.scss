@@ -83,6 +83,13 @@ input[type="radio"]{
   margin-top: 7%;
 }
 
+.week{
+  padding: 5px;
+  font-family: Roboto, sans-serif;
+  font-style: 700;
+  border-bottom: 1px solid #EEEEEE;
+}
+
 .conversationTopic{
   @include inline-wrapper();
   padding: 25px 0px 10px 0px;
@@ -136,6 +143,11 @@ input[type="radio"]{
     background-color: #42A5F5;
     color: white;
     padding: 20px 0 20px 0;
+  }
+  .resultTotal{
+    @include inline-element(100%, middle, 1rem);
+    text-align: right;
+    margin-top: 5px;
   }
 }
 

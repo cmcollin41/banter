@@ -4,7 +4,7 @@
   </div>
   <div class="commentBody">
     <%= div_for comment do %>
-      <p class="text-muted small">Posted by <%= comment.user.name %> <%= local_time_ago comment.created_at %></p>
+      <p class="small"><strong><%= comment.user.name %></strong> - <%= local_time_ago comment.created_at %></p>
       <p><%= markdownify comment.body %></p>
     <% end %>
   </div>

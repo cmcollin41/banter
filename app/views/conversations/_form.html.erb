@@ -29,14 +29,5 @@
 <% end %>
 
 <script>
-$(document).ready(function(){ 
-  
-  function togglePolls() {
-    document.getElementById("polls").classList.toggle('active');
-  }
-
-  document.getElementById("pollsToggle").addEventListener("click", togglePolls, false);
-
-});
-
-</scrip>
+<%= javascript_include_tag "custom" %>
+</script>

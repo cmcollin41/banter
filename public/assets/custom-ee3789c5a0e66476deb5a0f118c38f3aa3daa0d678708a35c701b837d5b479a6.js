@@ -1,0 +1,1 @@
+$(document).ready(function(){function e(){document.getElementById("polls").classList.toggle("active")}document.getElementById("pollsToggle").addEventListener("click",e,!1)});

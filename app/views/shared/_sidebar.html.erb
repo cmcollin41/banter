@@ -14,14 +14,27 @@
         <%= link_to "New Conversation", new_conversation_path %>
         <span class='fa fa-plus'></span>
       </li>
-      <li>
-        <%= link_to current_user.name, edit_user_registration_path %>
-        <% if user_signed_in? %>
-           <span><%= image_tag current_user.avatar_url, style: "border-radius: 50%; width: 25px; margin-top: -5px;" %></span>
-        <% else %>
-          <span class='fa fa-user'></span>
+      <% if user_signed_in? %>
+        <li>
+            <%= link_to current_user.name, edit_user_registration_path %>
+            <span><%= image_tag current_user.avatar_url, style: "border-radius: 50%; width: 25px; margin-top: -5px;" %></span>
+        </li>
+        <% if current_user.admin? %>
+          <li>
+            <%= link_to "Users", users_path %>
+            <span class='fa fa-users'></span>
+          </li>
         <% end %>
-      </li>
+        <li>
+          <%= link_to "Logout", destroy_user_session_path, method: :delete%>
+          <span class='fa fa-sign-out'></span>
+        </li>
+      <% else %>
+        <li>
+            <%= link_to "Login", new_user_session_path %>
+            <span class='fa fa-sign-in'></span>
+        </li>
+      <% end %>
       <li>
         <a>Notifications</a>
         <span class='fa fa-envelope'></span>

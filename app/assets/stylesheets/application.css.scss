@@ -80,7 +80,7 @@ input[type="radio"]{
 
 .conversations{
   margin: 0 auto;
-  margin-top: 7%;
+  margin-top: 2%;
 }
 
 .week{
@@ -89,6 +89,7 @@ input[type="radio"]{
   font-style: 700;
   border-bottom: 1px solid #EEEEEE;
 }
+
 
 .conversationTopic{
   @include inline-wrapper();
@@ -265,6 +266,122 @@ input[type="radio"]{
 }
 
 //////////////// NAVBAR //////////////////////////////
+
+
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  box-sizing: border-box;
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 50px;
+  height: 100vh;
+  background-color: #222;
+  color: #fff;
+  overflow: hidden;
+  transition: width .3s ease-in-out;
+  box-shadow: 0 0 10px #000;
+  z-index: 100;
+  &:hover {
+    width: 200px;
+    .main-nav {
+      ul {
+        li {
+          a {
+            opacity: 1;
+            left: 0;
+            transition-delay: .2s;
+          }
+        }
+      }
+    }
+  }
+  .main-nav {
+    ul {
+      li {
+        min-height: 50px;
+        //line-height: 30px;
+        position: relative;
+        border-bottom: 1px solid #333;
+        transition: all .3s ease-in-out;
+        &.logo {
+          margin-bottom: 50px;
+          a {
+            text-transform: uppercase;
+            text-decoration: none;
+            font-weight: 800;
+          }
+          span {
+            &:before {
+              color: #fff;
+              font-size: 1.5em;
+            }
+          }
+          &+li {
+            border-top: 1px solid #333;
+          }
+        }
+        &.newConvo {
+          margin-bottom: 50px;
+          a {
+            text-decoration: none;
+            font-weight: 800;
+          }
+          span {
+            &:before {
+              color: #fff;
+              font-size: 1.5em;
+            }
+          }
+          &+li {
+            border-top: 1px solid #333;
+          }
+        }
+        a {
+          display: block;
+          padding-left: 50px;
+          position: relative;
+          left: 15px;
+          top: 16px;
+          opacity: 0;
+          transition: all .3s ease-in-out;
+          transition-delay: 0s;
+          text-decoration: none;
+          cursor: pointer;
+          font-weight: 300;
+        }
+        span {
+          position: absolute;
+          width: 50px;
+          height: 50px;
+          top: 16px;
+          left: 0;
+          text-align: center;
+          &:before {
+            font-size: 1.25em;
+            transition: all .3s ease-in-out;
+          }
+        }
+        &:hover {
+          background-color: #111;
+          span {
+            &:before {
+              color: $brand-primary;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+
 
 .navbar{
   -moz-box-shadow:    3px 0px 5px 3px #EEEEEE;

@@ -11,6 +11,7 @@
 #  slug          :string
 #  likes_count   :integer          default(0), not null
 #  answers_count :integer          default(0), not null
+#  school_id     :integer
 #
 # Indexes
 #
@@ -24,6 +25,7 @@ class Conversation < ActiveRecord::Base
   acts_as_paranoid
 
   belongs_to :user
+  belongs_to :school
   has_many :comments, dependent: :destroy
   has_many :polls, dependent: :destroy
   has_many :answers, dependent: :destroy

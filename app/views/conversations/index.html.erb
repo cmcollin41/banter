@@ -1,13 +1,16 @@
 <div class="container">
-  <div class="pull-right">
-    <%= search_form_for @q, html: { class: "form-inline" } do |f| %>
-      <%= f.search_field :subject_or_comments_body_cont, placeholder: "Search...", class: "form-control" %>
-    <% end %>
-  </div>
-
   <div class="conversations">
     <h5 class="week">This Week&nbsp;&nbsp;<span class="text-mute small">DEC 14 - DEC 20</span></h5>
     <%= render @conversations.recent_convos %>
   </div>
-
 </div>
+
+
+
+
+ <!--  <div class="pull-right">
+    <%#= search_form_for @q, html: { class: "form-inline" } do |f| %>
+      <%#= f.search_field :subject_or_comments_body_cont, placeholder: "Search...", class: "form-control" %>
+    <%# end %>
+  </div>
+ -->

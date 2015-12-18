@@ -6,13 +6,15 @@ Rails.application.routes.draw do
       put 'users/:id' => 'devise/registrations#update', :as => 'user_registration'            
     end
 
+  resources :schools
+
   resources :conversations do
     resources :comments, module: :conversations
     resources :polls, module: :conversations
     resources :answers, module: :conversations
     resource :like, module: :conversations
   end
-
+  
   resources :users do
     collection do
       post :import

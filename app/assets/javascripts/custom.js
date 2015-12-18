@@ -6,4 +6,5 @@ $(document).ready(function(){
 
   document.getElementById("pollsToggle").addEventListener("click", togglePolls, false);
 
+
 });

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151216041742) do
+ActiveRecord::Schema.define(version: 20151217050315) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -42,6 +42,7 @@ ActiveRecord::Schema.define(version: 20151216041742) do
     t.string   "slug"
     t.integer  "likes_count",   default: 0, null: false
     t.integer  "answers_count", default: 0, null: false
+    t.integer  "school_id"
   end
 
   add_index "conversations", ["deleted_at"], name: "index_conversations_on_deleted_at", using: :btree
@@ -75,6 +76,15 @@ ActiveRecord::Schema.define(version: 20151216041742) do
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
   end
+
+  create_table "schools", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string   "slug"
+  end
+
+  add_index "schools", ["slug"], name: "index_schools_on_slug", unique: true, using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "",    null: false

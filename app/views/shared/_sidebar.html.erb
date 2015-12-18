@@ -1,0 +1,39 @@
+<aside class='sidebar'>
+  <div class='main-nav'>
+    <ul>
+      <li class='logo'>
+        <%= link_to "Banter", root_path %>
+        <span><%= image_tag('b_logo.png', style: "width: 35px; margin-top: -9px;") %></span>
+        <span>
+          <%= link_to root_url, class: "navbar-brand" do %>
+            <%= image_tag('b_logo.png', style: "opacity: 0.10;") %>
+          <% end %>
+        </span>
+      </li>
+      <li class="newConvo">
+        <%= link_to "New Conversation", new_conversation_path %>
+        <span class='fa fa-plus'></span>
+      </li>
+      <li>
+        <%= link_to current_user.name, edit_user_registration_path %>
+        <% if user_signed_in? %>
+           <span><%= image_tag current_user.avatar_url, style: "border-radius: 50%; width: 25px; margin-top: -5px;" %></span>
+        <% else %>
+          <span class='fa fa-user'></span>
+        <% end %>
+      </li>
+      <li>
+        <a>Notifications</a>
+        <span class='fa fa-envelope'></span>
+      </li>
+      <li>
+        <a>Nearby Teams</a>
+        <span class='fa fa-map-marker'></span>
+      </li>
+       <li>
+        <a>Search</a>
+        <span class='fa fa-search'></span>
+      </li>
+    </ul>
+  </div>
+</aside>

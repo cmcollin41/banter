@@ -1,13 +1,12 @@
 <aside class='sidebar'>
   <div class='main-nav'>
+    <i class="mobileBtn fa fa-bars"></i>
+    <span><%= image_tag('b_logo.png', class: "bgLogo") %></span>
     <ul>
       <li class='logo'>
         <%= link_to "Banter", root_path %>
-        <span><%= image_tag('b_logo.png', style: "width: 35px; margin-top: -9px;") %></span>
         <span>
-          <%= link_to root_url, class: "navbar-brand" do %>
-            <%= image_tag('b_logo.png', style: "opacity: 0.10;") %>
-          <% end %>
+          <%= image_tag('b_logo.png', style: "width: 35px; margin-top: -9px;") %>
         </span>
       </li>
       <li class="newConvo">

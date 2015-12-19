@@ -48,6 +48,13 @@ $navbar-default-link-color: $brand-primary;
 }
 
 /////////////////// @STANDARD /////////////////////////////
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  box-sizing: border-box;
+}
 
 a,p,h6,h5,h4,h3,h2,h1,label{
   font-family: Roboto, sans-serif;
@@ -268,14 +275,6 @@ input[type="radio"]{
 //////////////// NAVBAR //////////////////////////////
 
 
-* {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  outline: 0;
-  box-sizing: border-box;
-}
-
 .sidebar {
   position: fixed;
   top: 0;
@@ -288,9 +287,32 @@ input[type="radio"]{
   transition: width .3s ease-in-out;
   box-shadow: 0 0 10px #000;
   z-index: 100;
-  &:hover {
+
+  @media only screen and (max-width: 800px) {
+    top: 0;
+    width: 100%;
+    height: 50px;
+  }
+
+  &:hover, &:focus {
     width: 200px;
+      @media only screen and (max-width: 800px) {
+        top: 0;
+        width: 100%;
+        height: 500px;
+      }
+
     .main-nav {
+      .mobileBtn{
+        display: none;
+        @media only screen and (max-width: 800px) {
+          display: block;
+          z-index: 101;
+          position: absolute;
+          top: 18px;
+          right: 25px;
+        }
+      }
       ul {
         li {
           a {
@@ -303,10 +325,24 @@ input[type="radio"]{
     }
   }
   .main-nav {
+    .mobileBtn{
+    display: none;
+      @media only screen and (max-width: 800px) {
+        display: block;
+        position: absolute;
+        top: 18px;
+        right: 25px;
+      }
+    }
+    .bgLogo{
+      position: absolute;
+      opacity: 0.05;
+      top: 50px;
+      right: -50px;
+    }
     ul {
       li {
         min-height: 50px;
-        //line-height: 30px;
         position: relative;
         border-bottom: 1px solid #333;
         transition: all .3s ease-in-out;
@@ -323,6 +359,15 @@ input[type="radio"]{
               font-size: 1.5em;
             }
           }
+          // .mobileBtn{
+          //   display: none;
+          //    @media only screen and (max-width: 800px) {
+          //     display: block;
+          //     position: absolute;
+          //     top: 5px;
+          //     right: 5px;
+          //   }
+          // }
           &+li {
             border-top: 1px solid #333;
           }

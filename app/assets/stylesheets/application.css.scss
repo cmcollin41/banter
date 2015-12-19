@@ -288,6 +288,18 @@ input[type="radio"]{
   box-shadow: 0 0 10px #000;
   z-index: 100;
 
+  & .logo {
+    margin-bottom: 50px;
+    padding: 5px;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-weight: 800;
+    border-bottom: 1px solid #333;
+    &+li {
+      border-top: 1px solid #333;
+    }
+  }
+
   @media only screen and (max-width: 800px) {
     top: 0;
     width: 100%;
@@ -295,7 +307,7 @@ input[type="radio"]{
     &.menuActive {
       height: 500px;
     }
-    
+
   }
   &:hover {
     width: 200px;
@@ -308,7 +320,7 @@ input[type="radio"]{
         display: none;
         @media only screen and (max-width: 800px) {
           display: block;
-          z-index: 101;
+          z-index: 1000;
           position: absolute;
           top: 18px;
           right: 25px;
@@ -347,31 +359,8 @@ input[type="radio"]{
         position: relative;
         border-bottom: 1px solid #333;
         transition: all .3s ease-in-out;
-        &.logo {
-          margin-bottom: 50px;
-          a {
-            text-transform: uppercase;
-            text-decoration: none;
-            font-weight: 800;
-          }
-          span {
-            &:before {
-              color: #fff;
-              font-size: 1.5em;
-            }
-          }
-          // .mobileBtn{
-          //   display: none;
-          //    @media only screen and (max-width: 800px) {
-          //     display: block;
-          //     position: absolute;
-          //     top: 5px;
-          //     right: 5px;
-          //   }
-          // }
-          &+li {
-            border-top: 1px solid #333;
-          }
+        &:first-child{
+          border-top: 1px solid #333;
         }
         &.newConvo {
           margin-bottom: 50px;
@@ -380,6 +369,7 @@ input[type="radio"]{
             font-weight: 800;
           }
           span {
+
             &:before {
               color: #fff;
               font-size: 1.5em;

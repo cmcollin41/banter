@@ -3,12 +3,11 @@
     <i class="mobileBtn fa fa-bars" id="menuToggle"></i>
     <span><%= image_tag('b_logo.png', class: "bgLogo") %></span>
     <ul >
-      <li class='logo'>
-        <%= link_to "Banter", root_path %>
-        <span>
-          <%= image_tag('b_logo.png', style: "width: 35px; margin-top: -9px;") %>
-        </span>
-      </li>
+      <div class="logo">
+        <%= link_to root_path do %>
+          <%= image_tag('b_logo.png', style: "width: 35px; margin-top: 3px; margin-left: 2px;") %>
+        <% end %>
+      </div>
       <li class="newConvo">
         <%= link_to "New Conversation", new_conversation_path %>
         <span class='fa fa-plus'></span>

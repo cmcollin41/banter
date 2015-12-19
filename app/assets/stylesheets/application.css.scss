@@ -294,7 +294,7 @@ input[type="radio"]{
     height: 50px;
   }
 
-  &:hover, &:focus {
+  &:hover, &.menuActive {
     width: 200px;
       @media only screen and (max-width: 800px) {
         top: 0;
@@ -425,7 +425,6 @@ input[type="radio"]{
     }
   }
 }
-
 
 
 .navbar{

@@ -27,6 +27,6 @@ $(document).ready(function(){
   }
 
   document.getElementById("pollsToggle").addEventListener("click", togglePolls, false);
-  document.getElementById("menuToggle").addEventListener("touchstart", toggleBar, false);
+  document.getElementById("menuToggle").addEventListener("click", toggleBar, false);
 
 });

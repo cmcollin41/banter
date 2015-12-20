@@ -23,6 +23,7 @@ $(document).ready(function(){
   }
 
   function toggleBar(){
+    console.log("hallelujah")
     document.getElementById("menu").classList.toggle('menuActive');
   }
 

@@ -1,0 +1,1 @@
+$(document).ready(function(){function e(){document.getElementById("polls").classList.toggle("active")}function t(){console.log("hallelujah"),document.getElementById("menu").classList.toggle("menuActive")}document.getElementById("pollsToggle").addEventListener("click",e,!1),document.getElementById("menuToggle").addEventListener("touchstart",t,!1)});

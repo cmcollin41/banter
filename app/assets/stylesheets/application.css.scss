@@ -273,7 +273,12 @@ input[type="radio"]{
 }
 
 //////////////// NAVBAR //////////////////////////////
-
+.topbar {
+  width: 100%;
+  height: 50px;
+  background: #fff;
+  color: black;
+}
 
 .sidebar {
   position: fixed;

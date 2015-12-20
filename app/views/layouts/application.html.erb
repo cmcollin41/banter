@@ -4,7 +4,7 @@
   <title>Banter</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <%= stylesheet_link_tag  "application", media: "all" %>
-  <%= javascript_include_tag "application" %>
+  <%= javascript_include_tag "application", 'data-turbolinks-track' => true  %>
   <%= favicon_link_tag 'favicon.ico' %>
   <%= csrf_meta_tags %>
 </head>
@@ -15,7 +15,6 @@
     <div>
       <%= yield %>
     </div>
-    <%= javascript_include_tag "custom" %>
   </body>
 </html>
 

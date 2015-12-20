@@ -6,11 +6,10 @@ $(document).ready(function(){
 
 
   function toggleBar(){
-    console.log("hi");
     document.getElementById("menu").classList.toggle('menuActive');
   }
   
-  document.getElementById("pollsToggle").addEventListener("click", togglePolls, false);
   document.getElementById("menuToggle").addEventListener("click", toggleBar, false);
+  document.getElementById("pollsToggle").addEventListener("click", togglePolls, false);
 
 });

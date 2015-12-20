@@ -1,0 +1,1 @@
+$(document).ready(function(){function e(){document.getElementById("polls").classList.toggle("active")}function t(){document.getElementById("menu").classList.toggle("menuActive")}document.getElementById("menuToggle").addEventListener("click",t,!1),document.getElementById("pollsToggle").addEventListener("click",e,!1)});

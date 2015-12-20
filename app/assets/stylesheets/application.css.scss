@@ -285,6 +285,7 @@ input[type="radio"]{
   color: #fff;
   overflow: hidden;
   transition: width .3s ease-in-out;
+  transition: height .3s ease-in-out;
   box-shadow: 0 0 10px #000;
   z-index: 100;
 

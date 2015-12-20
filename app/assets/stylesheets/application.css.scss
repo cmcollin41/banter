@@ -311,7 +311,7 @@ input[type="radio"]{
     height: 50px;
     transition: height .3s ease-in-out;
     &.menuActive {
-      height: 500px;
+      height: 650px;
     }
 
   }
@@ -383,6 +383,54 @@ input[type="radio"]{
           }
           &+li {
             border-top: 1px solid #333;
+          }
+        }
+        &.utah {
+          background-color: #f44336;
+          opacity: 0.5;
+          a {
+            color: white;
+            text-decoration: none;
+            font-weight: 800;
+          }
+          span {
+
+            &:before {
+              color: #fff;
+              font-size: 1.5em;
+            }
+          }
+        }
+         &.utahst {
+          background-color: #0d47a1;
+          opacity: 0.5;
+          a {
+            color: white;
+            text-decoration: none;
+            font-weight: 800;
+          }
+          span {
+
+            &:before {
+              color: #fff;
+              font-size: 1.5em;
+            }
+          }
+        }
+        &.uvu {
+          background-color: #2e7d32;
+          opacity: 0.5;
+          a {
+            color: white;
+            text-decoration: none;
+            font-weight: 800;
+          }
+          span {
+
+            &:before {
+              color: #fff;
+              font-size: 1.5em;
+            }
           }
         }
         a {

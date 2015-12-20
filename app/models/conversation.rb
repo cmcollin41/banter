@@ -63,11 +63,11 @@ class Conversation < ActiveRecord::Base
   end
 
   def self.recent_convos
-    Conversation.where("created_at >= ?", 1.week.ago.utc).order("likes_count DESC, created_at DESC")
+    Conversation.where("created_at >= ?", 1.day.ago.utc).order("likes_count DESC, created_at DESC")
   end
 
   def self.past_convos
-    Conversation.where("created_at < ?", 1.week.ago.utc).order("likes_count DESC, created_at DESC")
+    Conversation.where("created_at < ?", 1.day.ago.utc).order("likes_count DESC, created_at DESC")
   end
 
 end

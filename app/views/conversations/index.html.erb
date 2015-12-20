@@ -3,8 +3,12 @@
 </div> -->
 <div class="container">
   <div class="conversations">
-    <h5 class="week">This Week&nbsp;&nbsp;<span class="text-mute small">DEC 14 - DEC 20</span></h5>
+    <h5 class="week">Today&nbsp;&nbsp;<span class="text-mute small">DEC 20</span></h5>
     <%= render @conversations.recent_convos %>
+  </div>
+  <div class="conversations">
+    <h5 class="week">Everything Else</h5>
+    <%= render @conversations.past_convos %>
   </div>
 </div>
 

@@ -13,29 +13,6 @@
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap
+//= require custom
 //= require local_time
 //= require_tree .
-
-$(document).ready(function(){ 
-  
-  function togglePolls() {
-    document.getElementById("polls").classList.toggle('active');
-  }
-
-
-  document.getElementById("pollsToggle").addEventListener("click", togglePolls, false);
-
-});
-
-
-$(document).ready(function(){ 
-
-  function toggleBar(){
-    console.log("hallelujah")
-    document.getElementById("menu").classList.toggle('menuActive');
-  }
-
-
-  document.getElementById("menuToggle").addEventListener("click", toggleBar, false);
-
-});

@@ -3,7 +3,7 @@
 </div> -->
 <div class="container">
   <div class="conversations">
-    <h5 class="week">Today&nbsp;&nbsp;<span class="text-mute small">DEC 20</span></h5>
+    <h5 class="week">Today&nbsp;&nbsp;<span class="text-mute small"><%= Time.now.strftime('%b, %e') %>.</span></h5>
     <%= render @conversations.recent_convos %>
   </div>
   <div class="conversations">

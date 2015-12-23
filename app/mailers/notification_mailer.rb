@@ -1,5 +1,5 @@
 class NotificationMailer < ActionMailer::Base
-  default from: "notifications@banter.com"
+  default from: "notifications@sportsbanter.co"
 
   def comment_notification(user, comment)
     @user = user
@@ -7,7 +7,7 @@ class NotificationMailer < ActionMailer::Base
 
     mail(
       to: "#{user.email}",
-      subject: "[Banter] New post in #{comment.conversation.subject}"
+      subject: "[Banter] New comment in #{comment.conversation.subject}"
     )
   end
 end

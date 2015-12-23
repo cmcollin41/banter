@@ -1,3 +1,7 @@
-<% @schools.each do |n| %>
-<%= n.name %>
-<% end %>
+<div class="flexed">
+  <% @schools.each do |n| %>
+  <div class="<%= n.name %>-1">
+    <%= link_to n.name, school_path(n) %>
+  </div>
+  <% end %>
+</div>

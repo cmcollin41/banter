@@ -10,7 +10,7 @@
   </div>
   <div class="commentDelete">
     <% if comment.user == current_user %>
-    <%= link_to fa_icon("trash-o"), conversation_comment_path(@conversation, comment), method: :delete  %>
+    <%= link_to fa_icon("trash-o"), comment_path(comment), method: :delete  %>
     </br>
     <% end %>
     <%= link_to fa_icon("twitter"), "#" %>

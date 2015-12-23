@@ -9,10 +9,10 @@
           <%= image_tag('b_logo.png', style: "width: 35px; margin-top: 3px; margin-left: 2px;") %>
         <% end %>
       </div>
-      <li class="newConvo">
-        <%= link_to "New Conversation", new_conversation_path %>
+     <!--  <li class="newConvo">
+        <%#= link_to "New Conversation", new_school_conversation_path(@school) %>
         <span class='fa fa-plus'></span>
-      </li>
+      </li> -->
       <% if user_signed_in? %>
         <li>
             <%= link_to current_user.name, edit_user_registration_path %>
@@ -42,13 +42,11 @@
         <a>Nearby Schools</a>
         <span class='fa fa-map-marker'></span>
       </li>
-      
-      <li class="utah">
-        <a>Utah</a>
-      </li>
-      <li class="utahst">
-        <a>Utah St.</a>
-      </li>
+      <% @schools.each do |n| %>
+        <li class="<%= n.name %>">
+          <a><%= link_to n.name, school_path(n) %></a>
+        </li>
+      <% end %>
       <li>
         <a>Search</a>
         <span class='fa fa-search'></span>

@@ -1,1 +1,33 @@
-<%= @school.name %>
+<div class="container pushRight">
+  <div class="row">
+    <div class="col-md-6" style="text-align: left;">
+      <h1><%= @school.name %></h1>
+    </div>
+    <div class="col-md-6" style="text-align: right;">
+      <%= link_to "New Conversation", new_school_conversation_path(@school), class: "btn btn-primary" %>
+    </div>
+  </div>
+  <hr>
+  <% @conversations.each do |conversation| %>
+    <div class="threads">
+      <div class="threadLikes" id="conversation_<%= conversation.id %>_likes">
+        <%= render partial: "likes", locals: {conversation: conversation} %>
+      </div>
+      <div class="threadSubject">
+        <h3><%= link_to conversation.subject, conversation %></h3>
+      </div>
+      <div class="threadAvatar">
+        <%= image_tag conversation.user.avatar_url  %>
+      </div>
+      <div class="threadComments">
+        <span class="fa fa-comment-o">&nbsp;</span><span><%= conversation.post_count %></span>
+      </div>
+      <div class="threadDelete">
+        <% if conversation.user == current_user %>
+          <%= link_to fa_icon('trash-o'), conversation, method: :delete %>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+
+</div>

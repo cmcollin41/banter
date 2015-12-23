@@ -64,11 +64,20 @@ a,p,h6,h5,h4,h3,h2,h1,label{
 body{
   background: #ffffff;
   margin-top: 70px;
+  padding: 0px;
 }
 
 .center{
   text-align: center;
   margin: 0 auto;
+}
+
+.pushRight{
+  padding-left: 50px;
+
+   @media only screen and (max-width: 800px) {
+    padding-left: 0px;
+  }
 }
 
 
@@ -97,6 +106,41 @@ input[type="radio"]{
   border-bottom: 1px solid #EEEEEE;
 }
 
+.flexed{
+  margin-top: -70px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.Utah-1{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 50%;
+  background-color: #f44336;
+  font-size: 4rem;
+  a{
+    color: white;
+    text-decoration: none;
+  }
+}
+
+.BYU-1{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 50%;
+  background-color: #2196F3;
+  font-size: 4rem;
+  a{
+    color: white;
+    text-decoration: none;
+  }
+}
 
 .conversationTopic{
   @include inline-wrapper();
@@ -385,7 +429,7 @@ input[type="radio"]{
             border-top: 1px solid #333;
           }
         }
-        &.utah {
+        &.Utah {
           background-color: #f44336;
           opacity: 0.5;
           a {
@@ -401,7 +445,7 @@ input[type="radio"]{
             }
           }
         }
-         &.utahst {
+         &.BYU {
           background-color: #0d47a1;
           opacity: 0.5;
           a {

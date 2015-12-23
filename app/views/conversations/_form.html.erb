@@ -1,5 +1,5 @@
 
-<%= form_for @conversation do |f| %>
+<%= form_for [@school, @conversation] do |f| %>
   <div class="form-group">
     <%= f.text_field :subject, placeholder: "Subject", class: "form-control" %>
   </div>

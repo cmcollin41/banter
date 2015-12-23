@@ -1,12 +1,16 @@
 class SchoolsController < ApplicationController
+  before_action :set_schools
 
   def index
-    @schools = School.all
+   
   end
 
   def show
-    @school = School.find(params[:id])
+    @schools = School.all
+    @school = School.friendly.find(params[:id])
+    @conversations = @school.conversations.all
   end
+
 
   def new
     @school = School.new
@@ -21,8 +25,11 @@ class SchoolsController < ApplicationController
 
   private
 
+  def set_schools
+    @schools = School.all
+  end
 
-    def school_params
-      params.require(:school).permit(:name)
-    end
+  def school_params
+    params.require(:school).permit(:name, :school_id)
+  end
 end

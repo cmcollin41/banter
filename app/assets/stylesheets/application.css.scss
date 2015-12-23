@@ -108,10 +108,14 @@ input[type="radio"]{
 
 .flexed{
   margin-top: -70px;
+  margin-left: 50px;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
+  @media only screen and (max-width: 800px) {
+    margin-left: 0px;
+  }
 }
 
 .Utah-1{

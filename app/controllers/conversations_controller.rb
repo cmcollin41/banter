@@ -7,7 +7,7 @@ class ConversationsController < ApplicationController
   def index
     # @q = Conversation.search(params[:q])
     # @conversations = @q.result(distinct: true).order(likes_count: :desc)
-    @conversations = @school.conversations.all
+    @conversations = @school.conversations.all.order(likes_count: :desc)
   end
 
   def show

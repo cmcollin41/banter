@@ -8,7 +8,7 @@ class SchoolsController < ApplicationController
   def show
     @schools = School.all
     @school = School.friendly.find(params[:id])
-    @conversations = @school.conversations.all
+    @conversations = @school.conversations.all.order(likes_count: :desc)
   end
 
 

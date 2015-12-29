@@ -54,9 +54,18 @@ class User < ActiveRecord::Base
   has_many :likes, dependent: :destroy
   has_many :polls, dependent: :destroy
   has_many :answers, dependent: :destroy
+  has_many :commitments, dependent: :destroy
 
   def likes?(conversation)
     conversation.likes.where(user_id: id).any?
+  end
+
+  def committed?
+    self.commitments.any?
+  end
+
+  def commitments?(school)
+    school.commitments.where(user_id: id).any?
   end
 
   def answers?(conversation)

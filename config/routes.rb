@@ -13,6 +13,7 @@ Rails.application.routes.draw do
       resources :answers, module: :conversations
       resource :like, module: :conversations
     end
+    resource :commitment, module: :schools
   end
 
 

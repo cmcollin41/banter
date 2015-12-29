@@ -2,13 +2,14 @@
 #
 # Table name: schools
 #
-#  id              :integer          not null, primary key
-#  name            :string
-#  created_at      :datetime         not null
-#  updated_at      :datetime         not null
-#  slug            :string
-#  school_id       :integer
-#  conversation_id :integer
+#  id                :integer          not null, primary key
+#  name              :string
+#  created_at        :datetime         not null
+#  updated_at        :datetime         not null
+#  slug              :string
+#  school_id         :integer
+#  conversation_id   :integer
+#  commitments_count :integer          default(0), not null
 #
 # Indexes
 #

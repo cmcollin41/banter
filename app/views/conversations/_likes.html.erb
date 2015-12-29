@@ -2,6 +2,6 @@
   <p><%= link_to fa_icon("chevron-up"), conversation_like_path(conversation), method: :delete, remote: :true %></p>
   <p style="color: #2196F3"><%= conversation.like_count %></p>
 <% else %>
-  <p><%= link_to fa_icon("chevron-up", style: "color: black;"), conversation_like_path(conversation), method: :post, remote: :true %></p>
+  <p><%= link_to fa_icon("Z-up", style: "color: black;"), conversation_like_path(conversation), method: :post, remote: :true %></p>
   <p><%= conversation.like_count %></p>
 <% end %>

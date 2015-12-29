@@ -4,7 +4,9 @@
       <h1><%= @school.name %></h1>
     </div>
     <div class="col-md-6" style="text-align: right;">
-      <%= link_to "New Conversation", new_school_conversation_path(@school), class: "btn btn-primary" %>
+      <div id="commitments">
+        <%= render partial: "commitments", locals: {school: @school} %>
+      </div>
     </div>
   </div>
   <hr>

@@ -16,7 +16,7 @@
       <% if user_signed_in? %>
         <li>
             <%= link_to current_user.name, edit_user_registration_path %>
-            <span><%= image_tag current_user.avatar.url(:nav), style: "border-radius: 50%; margin-top: -5px; margin-left: -3px;" %></span>
+            <span><%= image_tag current_user.avatar.url(:nav), style: "border-radius: 50%; margin-top: -5px; margin-left: -3px; width: 25px; height: 25px;" %></span>
         </li>
         <% if current_user.admin? %>
           <li>

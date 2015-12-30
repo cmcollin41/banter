@@ -27,6 +27,10 @@
 #  invited_by_type        :string
 #  invitations_count      :integer          default(0)
 #  admin                  :boolean          default(FALSE)
+#  avatar_file_name       :string
+#  avatar_content_type    :string
+#  avatar_file_size       :integer
+#  avatar_updated_at      :datetime
 #
 # Indexes
 #

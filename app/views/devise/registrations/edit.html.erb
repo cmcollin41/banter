@@ -4,39 +4,38 @@
       <h1 class="page-header text-center">Account</h1>
       <div class="light-well">
         <div class="panel-body">
-            <%= form_for resource, :as => resource_name, :url => invitation_path(resource_name), :html => {:method => :post} do |f| %>
+
+              <%= form_for(resource, :as => resource_name, :url => user_registration_path(resource), :html => { :method => :put, multipart: true }) do |f| %>
                 <%= devise_error_messages! %>
+
                 <div class="row">
-                  <div class="col-md-8">
+                  <div class="col-sm-5" style="text-align:right;">
                     <div class="form-group">
-                      <% resource.class.invite_key_fields.each do |field| -%>
-                        <%= f.text_field field, placeholder: "Friends Email", class: "form-control" %>
-                      <% end -%>
+                      <%= image_tag current_user.avatar.url(:thumb), style: "border-radius: 50%;" %> 
                     </div>
                   </div>
-                  <div class="col-md-4">
-                    <div class="form-group">
-                      <%= f.submit "Invite A Friend", class: "btn btn-success btn-block" %>
+                  <div class="col-sm-7">
+                    <div class="form-group" style="margin-top: 45px;">
+                      <%= f.file_field :avatar %>
                     </div>
                   </div>
                 </div>
-              <% end %>
 
-              <hr>
-              </br>
-              <span><%= image_tag current_user.avatar_url, style: "border-radius: 50%;" %></span><span> Visit <a href="https://www.gravatar.com">Gravatar</a> to update your avatar.</span>
-              </br>
-              <hr>
-              </br>
-              <%= form_for(resource, :as => resource_name, :url => user_registration_path(resource), :html => { :method => :put }) do |f| %>
-                <%= devise_error_messages! %>
+                
+                <div class="row">
+                  <div class="col-sm-6">
+                    <div class="form-group">
+                      <%#= f.label :first_name %>
+                      <%= f.text_field :first_name, required: true, autofocus: true, placeholder: "First Name", class: "form-control" %>
+                    </div>
+                  </div>
 
-                <div class="form-group">
-                  <%= f.text_field :first_name, autofocus: true, placeholder: "First Name", class: "form-control" %>
-                </div>
-
-                <div class="form-group">
-                  <%= f.text_field :last_name, autofocus: true, placeholder: "Last Name", class: "form-control" %>
+                  <div class="col-sm-6">
+                    <div class="form-group">
+                      <%#= f.label :last_name %>
+                      <%= f.text_field :last_name, required: true, placeholder: "Last Name", class: "form-control" %>
+                    </div>
+                  </div>
                 </div>
 
                 <div class="form-group">

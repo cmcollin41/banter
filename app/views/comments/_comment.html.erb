@@ -1,6 +1,6 @@
 <div class="comments">
   <div class="commentPic">
-    <%= image_tag comment.user.avatar_url %>
+    <%= image_tag comment.user.avatar.url(:icon) %>
   </div>
   <div class="commentBody">
     <%= div_for comment do %>

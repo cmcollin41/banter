@@ -8,7 +8,10 @@ class SchoolsController < ApplicationController
   def show
     @schools = School.all
     @school = School.friendly.find(params[:id])
-    @conversations = @school.conversations.all.order(likes_count: :desc)
+    @today = @school.conversations.where("created_at >= ?", Time.zone.now.beginning_of_day).order("likes_count DESC, created_at DESC")
+    @yesterday = @school.conversations.where("created_at < ? AND created_at >= ?" ,Time.zone.now.beginning_of_day, Time.zone.now.beginning_of_day - 24.hours).order("likes_count DESC, created_at DESC")
+    @everything_else = @school.conversations.where("created_at < ?", Time.zone.now.beginning_of_day - 24.hours).order("likes_count DESC, created_at DESC")
+
   end
 
 

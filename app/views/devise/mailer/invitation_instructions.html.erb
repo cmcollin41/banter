@@ -1,8 +1,30 @@
-<p><%= t("devise.mailer.invitation_instructions.hello", email: @resource.email) %></p>
+<p>Hello, <%= @resource.email %>.</p>
 
-<p><%= t("devise.mailer.invitation_instructions.someone_invited_you", url: root_url) %></p>
-
-<p><%= link_to t("devise.mailer.invitation_instructions.accept"), accept_invitation_url(@resource, :invitation_token => @token) %></p>
+<p>Your friend, <strong><%= @user.invited_by.name %></strong> invited you to sportsbanter.co </p>
 
 
-<p><%= t("devise.mailer.invitation_instructions.ignore").html_safe %></p>
+<button class="btn btn-primary btn-block"><%= link_to t("devise.mailer.invitation_instructions.accept"), accept_invitation_url(@resource, :invitation_token => @token), class: "btn btn-primary" %></button>
+
+
+<p><strong>What Banter is all about</strong></p>
+
+<p>
+Banter was created to drive constructive conversation around sports and specifically your college or university. Imagine like "First Take", "PTI" or "Around the Horn" that you watch on ESPN. Are there differing opinions? Sure. But if you are coming here to "troll" your rival school and there fans, don't bother. Our goal is to be the ultimate fan board created by athletes and alumni who are in the know and can give insights that normally aren't found in a regular fan board. 
+</p>
+<p>
+So, to get started create an account with your email, first name, last name, and add a photo. We do all this to make sure we are keeping only real people with real accounts. Some of the things you can do are: Create conversations, create polls, vote and comment in conversations, and up-vote a conversation you like. 
+</p>
+<p>
+To get on Banter it is by invite only, so feel privileged that whoever invited you valued your opinion and wants to hear what you have to say.
+</p>
+<p>
+In our attempt to keep conversations constructive we require you to declare for which school you support. This allows you to create new conversations in your team page as well as comment and up-vote. You can still comment on another schools page but you cannot create a conversation on that page.
+</p>
+<p>
+Feel free to invite someone you know who would help drive the Banter in a productive and positive way. 
+</p>
+<p>
+Most of all have fun, we want to hear every opinion from every angle, share stats and articles that can back-up your claims. By doing this we will all benefit and become smarter for engaging in this type of conversations
+</p>
+
+<small><%= t("devise.mailer.invitation_instructions.ignore").html_safe %></small>

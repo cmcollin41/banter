@@ -14,10 +14,6 @@ class UsersController < ApplicationController
     end
   end
 
-  def invitations
-    @user = current_user
-  end
-
   def import
     @import = User::Import.new user_import_params
     if @import.save

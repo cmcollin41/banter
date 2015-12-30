@@ -27,6 +27,10 @@
 #  invited_by_type        :string
 #  invitations_count      :integer          default(0)
 #  admin                  :boolean          default(FALSE)
+#  avatar_file_name       :string
+#  avatar_content_type    :string
+#  avatar_file_size       :integer
+#  avatar_updated_at      :datetime
 #
 # Indexes
 #
@@ -45,6 +49,9 @@ class User < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :invitable, :database_authenticatable, :registerable, :recoverable, :rememberable, :trackable
 
+  has_attached_file :avatar, styles: { medium: "300x300#", thumb: "100x100#", icon: "50x50#", nav: "25x25#" }, default_url: "b_logo.png"
+  validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\Z/
+
   validates :email, presence: true
   validates :first_name, presence: true
   validates :last_name, presence: true
@@ -55,6 +62,7 @@ class User < ActiveRecord::Base
   has_many :polls, dependent: :destroy
   has_many :answers, dependent: :destroy
   has_many :commitments, dependent: :destroy
+  has_many :invitations, :class_name => 'User', :as => :invited_by
 
   def likes?(conversation)
     conversation.likes.where(user_id: id).any?

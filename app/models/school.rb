@@ -24,12 +24,4 @@ class School < ActiveRecord::Base
   has_many :conversations, dependent: :destroy
   has_many :commitments, dependent: :destroy
 
-
-  # def self.recent_convos
-  #   School.conversations.where("created_at >= ?", 1.day.ago.utc).order("likes_count DESC, created_at DESC")
-  # end
-
-  # def self.past_convos
-  #   School.conversations.where("created_at < ?", 1..ago.utc).order("likes_count DESC, created_at DESC")
-  # end
 end

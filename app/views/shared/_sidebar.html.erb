@@ -16,7 +16,7 @@
       <% if user_signed_in? %>
         <li>
             <%= link_to current_user.name, edit_user_registration_path %>
-            <span><%= image_tag current_user.avatar_url, style: "border-radius: 50%; width: 25px; margin-top: -5px;" %></span>
+            <span><%= image_tag current_user.avatar.url(:nav), style: "border-radius: 50%; margin-top: -5px; margin-left: -3px;" %></span>
         </li>
         <% if current_user.admin? %>
           <li>
@@ -28,16 +28,16 @@
           <%= link_to "Logout", destroy_user_session_path, method: :delete%>
           <span class='fa fa-sign-out'></span>
         </li>
+        <li>
+          <%= link_to "Invite a Friend", new_user_invitation_path %>
+          <span class='fa fa-paper-plane'></span>
+        </li>
       <% else %>
         <li>
             <%= link_to "Login", new_user_session_path %>
             <span class='fa fa-sign-in'></span>
         </li>
       <% end %>
-      <li>
-        <a>Notifications</a>
-        <span class='fa fa-envelope'></span>
-      </li>
       <li>
         <a>Nearby Schools</a>
         <span class='fa fa-map-marker'></span>

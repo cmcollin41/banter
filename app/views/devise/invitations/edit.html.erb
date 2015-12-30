@@ -2,6 +2,12 @@
   <div class="row">
     <div class="col-sm-6 col-sm-offset-3">
 
+      <div class="row">
+        <div class="col-sm-12 text-center">
+          <%= image_tag("b_logo.png", width: "75px") %>
+        </div>
+      </div>
+
       <h1 class="page-header text-center">Create Your Account</h1>
 
       <div class="light-well">
@@ -10,6 +16,19 @@
         <%= form_for resource, :as => resource_name, :url => invitation_path(resource_name), :html => { :method => :put } do |f| %>
           <%= devise_error_messages! %>
           <%= f.hidden_field :invitation_token %>
+
+<!--           <div class="row">
+            <div class="col-sm-3">
+              <div class="form-group text-center" style="border: 1px dashed #2196F3; width: 100px; height: 100px">
+                <i class="fa fa-user fa-5x" style="color: #2196F3; margin-top: 15px;"></i>
+              </div>
+            </div>
+            <div class="col-sm-9">
+              <div class="form-group" style="margin-top: 40px;">
+                <%#= f.file_field :avatar %>
+              </div>
+            </div>
+          </div> -->
 
           <div class="row">
             <div class="col-sm-6">
@@ -33,10 +52,23 @@
           </div>
 
           <div class="form-group">
+            <hr>
+            <%= f.file_field :avatar %>
+            <hr>
+          </div>
+
+          <div class="form-group">
             <%= f.submit "Create Account", class: "btn btn-primary"  %>
           </div>
         <% end %>
         </div>
+      </div>
+
+      <h4 class="page-header text-center">Join these users</h4>
+        <div class="text-align: center">
+        <% @users.each do |u| %>
+          <%= image_tag u.avatar.url(:icon), style: "width: 50px; height: 50px; border-radius: 50%;" %>
+        <% end %>
       </div>
     </div>
   </div>

@@ -1,6 +1,8 @@
 <% if user_signed_in? && current_user.commitments?(school) %>
- <%= link_to "New Conversation", new_school_conversation_path(school), class: "btn btn-primary" %>
- <%= link_to "Decommit from School", school_commitment_path(school), method: :delete, class: "btn btn-danger" %>
+  <%= link_to "New Conversation", new_school_conversation_path(school), class: "btn btn-primary" %>
+    <% if current_user.admin? %>
+      <%= link_to "Decommit from School", school_commitment_path(school), method: :delete, class: "btn btn-danger" %>
+    <% end %>
 <% elsif user_signed_in? && current_user.committed? %>
   
 <% else %>

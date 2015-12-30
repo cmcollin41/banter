@@ -12,7 +12,7 @@ gem 'jquery-turbolinks'
 gem 'turbolinks', '~> 2.5'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
-gem "devise", github: "plataformatec/devise"
+gem 'devise'
 gem 'bootstrap-sass', '~> 3.2.0.2'
 gem 'sucker_punch'
 gem 'ransack', github: 'activerecord-hackery/ransack', branch: 'rails-4.2'
@@ -25,6 +25,8 @@ gem 'paranoia', '~> 2.1.0'
 gem 'devise_invitable', '~> 1.5.2'
 gem 'friendly_id', '~> 5.1.0'
 gem 'font-awesome-rails'
+gem 'paperclip', '~> 4.2'
+gem 'aws-sdk', '< 2.0'
 
 group :development, :test do
   gem 'byebug'

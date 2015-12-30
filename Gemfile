@@ -42,6 +42,6 @@ group :development do
 end
 
 group :production do
-  gem 'aws-sdk', '~> 2'
+  gem 'aws-sdk', '1.6'
   gem 'rails_12factor'
 end

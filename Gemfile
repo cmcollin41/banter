@@ -26,7 +26,7 @@ gem 'devise_invitable', '~> 1.5.2'
 gem 'friendly_id', '~> 5.1.0'
 gem 'font-awesome-rails'
 gem 'paperclip', '~> 4.2'
-gem 'aws-sdk', '~> 2'
+
 
 group :development, :test do
   gem 'byebug'
@@ -41,4 +41,7 @@ group :development do
   gem "letter_opener"
 end
 
-gem 'rails_12factor', group: :production
+group :production do
+  gem 'aws-sdk', '~> 2'
+  gem 'rails_12factor'
+end

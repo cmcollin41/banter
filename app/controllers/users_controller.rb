@@ -5,7 +5,7 @@ class UsersController < ApplicationController
   def index
     @user = current_user
 
-    @users = User.all
+    @users = User.order(id: :ASC)
     @import = User::Import.new
 
     respond_to do |format|

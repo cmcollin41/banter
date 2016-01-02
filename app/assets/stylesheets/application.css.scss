@@ -159,6 +159,19 @@ input[type="radio"]{
     text-decoration: none;
   }
 }
+.more-coming{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50vh;
+  width: 50%;
+  background-color: #000;
+  font-size: 4rem;
+  a{
+    color: white;
+    text-decoration: none;
+  }
+}
 
 .conversationTopic{
   @include inline-wrapper();

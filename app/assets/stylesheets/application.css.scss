@@ -362,22 +362,32 @@ input[type="radio"]{
       margin-top: 10px;
       
       .arrow{
+        margin: auto;
         position: absolute;
-        top: 4px;
-        left: 20.5px;
+        top: 7px;
+        left: 0;
+        right: 0;
+        bottom: 0;
         color: $brand-primary;
       }
       .number{
         text-decoration: none;
+        margin: auto;
         position: absolute;
         top: 19px;
-        left: 20.5px;
+        left: 0;
+        right: 0;
+        bottom: 0;
         color: $brand-primary;
       }
       .numSelect{
+        margin: auto;
+        height: 50px;
         position: absolute;
-        top: 14px;
-        left: 20.5px;
+        top: 27px;
+        left: 0;
+        right: 0;
+        bottom: 0;
         color: $brand-primary;
       }
     }

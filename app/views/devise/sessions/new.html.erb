@@ -2,6 +2,12 @@
   <div class="row">
     <div class="col-sm-8 col-sm-offset-2">
 
+      <div class="row">
+        <div class="col-sm-12 text-center">
+          <%= image_tag("b_logo.png", width: "75px") %>
+        </div>
+      </div>
+
       <h1 class="page-header text-center">Sign In</h1>
 
       <div class="light-well">
@@ -31,7 +37,7 @@
                       <%= f.submit "Sign in", class: "btn btn-primary" %>
                     </div>
                   <% end %>
-                <%#= render "devise/shared/links" %>
+                <%= render "devise/shared/links" %>
             <hr>
             <h5>Or</h5>
             <div class="row">

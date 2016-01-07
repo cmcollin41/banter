@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151230035246) do
+ActiveRecord::Schema.define(version: 20160106061837) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,8 +29,9 @@ ActiveRecord::Schema.define(version: 20151230035246) do
     t.integer  "conversation_id"
     t.integer  "user_id"
     t.text     "body"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
+    t.integer  "favorites_count", default: 0, null: false
   end
 
   create_table "commitments", force: :cascade do |t|
@@ -54,6 +55,13 @@ ActiveRecord::Schema.define(version: 20151230035246) do
 
   add_index "conversations", ["deleted_at"], name: "index_conversations_on_deleted_at", using: :btree
   add_index "conversations", ["slug"], name: "index_conversations_on_slug", unique: true, using: :btree
+
+  create_table "favorites", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "comment_id"
+    t.integer  "user_id"
+  end
 
   create_table "friendly_id_slugs", force: :cascade do |t|
     t.string   "slug",                      null: false
@@ -92,6 +100,7 @@ ActiveRecord::Schema.define(version: 20151230035246) do
     t.integer  "school_id"
     t.integer  "conversation_id"
     t.integer  "commitments_count", default: 0, null: false
+    t.string   "sort"
   end
 
   add_index "schools", ["conversation_id"], name: "index_schools_on_conversation_id", using: :btree

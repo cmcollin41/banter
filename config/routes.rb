@@ -8,7 +8,9 @@ Rails.application.routes.draw do
 
   resources :schools, shallow: true do 
     resources :conversations do
-      resources :comments, module: :conversations
+      resources :comments, module: :conversations do
+        resource :favorite
+      end
       resources :polls, module: :conversations
       resources :answers, module: :conversations
       resource :like, module: :conversations

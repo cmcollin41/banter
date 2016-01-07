@@ -1,7 +1,9 @@
 <% if user_signed_in? && current_user.likes?(conversation) %>
-  <p><%= link_to fa_icon("chevron-up"), conversation_like_path(conversation), method: :delete, remote: :true %></p>
-  <p style="color: #2196F3"><%= conversation.like_count %></p>
+  <%#= link_to fa_icon("chevron-up"), conversation_like_path(conversation), method: :delete, remote: :true %>
+  <span class="numSelect"><%= conversation.like_count %></span>
 <% else %>
-  <p><%= link_to fa_icon("chevron-up", style: "color: black;"), conversation_like_path(conversation), method: :post, remote: :true %></p>
-  <p><%= conversation.like_count %></p>
+  <%= link_to conversation_like_path(conversation), method: :post, remote: :true do %>
+    <span class="fa fa-caret-up arrow"></span>
+    <span class="number"><%= conversation.like_count %></span>
+  <% end %>
 <% end %>

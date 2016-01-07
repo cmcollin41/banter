@@ -173,17 +173,58 @@ input[type="radio"]{
   }
 }
 
+.ad-space{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50vh;
+  width: 50%;
+  background-color: #000;
+  font-size: 4rem;
+  a{
+    color: white;
+    text-decoration: none;
+  }
+}
+
 .conversationTopic{
   @include inline-wrapper();
   padding: 25px 0px 10px 0px;
   .conversationLikes{
-    @include inline-element(40px, middle, 1.6rem);
+    @include inline-element(60px, middle, 1.6rem);
+    position: relative;
     text-align: center;
     margin-top: 18px;
+    text-align: center;
+    border: 1px solid #EEEEEE;
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    .arrow{
+      position: absolute;
+      top: 4px;
+      left: 20.5px;
+      color: $brand-primary;
+    }
+    .number{
+      text-decoration: none;
+      position: absolute;
+      top: 19px;
+      left: 20.5px;
+      color: $brand-primary;
+    }
+    .numSelect{
+      position: absolute;
+      top: 14px;
+      left: 20.5px;
+      color: $brand-primary;
+    }
   }
   .conversationSubject{
-    @include inline-element(calc(100% - 40px), middle, 1.6rem);
+    @include inline-element(calc(100% - 60px), middle, 1.6rem);
     text-align: left;
+    margin-top: 8px;
+    color: rgba(#000,0.89);
   }
 }
 
@@ -259,31 +300,46 @@ input[type="radio"]{
   height: 600px;
 }
 
-.comments{
-  @include inline-wrapper();
-    border-top: 1px solid #EEEEEE;
-    padding: 5px;
-    .commentPic{
-      @include inline-element(50px, top, 1rem);
-      text-align: center;
+.flex-row{
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: flex-start;
+  min-height: 30px;
+  padding: 5px;
+  border-top: 1px solid #EEEEEE;
+  .flex-avatar{
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    flex-basis: 50px;
+    text-align: center;
+    padding: 0 10px 10px 10px;
       img{
         border-radius: 50%;
         width: 35px;
       }
-    }
-    .commentBody{
-       @include inline-element(calc(100% - 100px), middle, 1.6rem);
-      text-align: left;
-    }
-    &:hover{
-      background: #FAFAFA;
-      cursor: pointer;
-      .commentDelete{
-        @include inline-element(50px, middle, 1.6rem);
+      .favorites{
+        display: flex;
+        flex-flow: column nowrap;
         text-align: center;
-        color: red;
+        margin-top: 3px;
       }
-    }
+  }
+  .flex-comment{
+    display: flex;
+    //justify-content: center;
+    flex-basis: 100%;
+  }
+}
+
+.commentAvatar {
+  //text-align: center;
+  img{
+    width:35px;
+    border-radius: 50%;
+    text-align: center;
+  }
 }
 
 
@@ -292,13 +348,47 @@ input[type="radio"]{
   margin: 0 auto;
   padding: 25px;
   border-bottom: 1px solid #EEEEEE;
+    &:first-child{
+      border-top: 1px solid #EEEEEE;
+    }
     .threadLikes{
-      @include inline-element(calc(10% - 45px), middle, 1.4rem);
+      position: relative;
+      @include inline-element(calc(10% - 40px), middle, 1.4rem);
       text-align: center;
+      border: 1px solid #EEEEEE;
+      border-radius: 50%;
+      height: 50px;
+      width: 50px;
+      margin-top: 10px;
+      
+      .arrow{
+        position: absolute;
+        top: 4px;
+        left: 20.5px;
+        color: $brand-primary;
+      }
+      .number{
+        text-decoration: none;
+        position: absolute;
+        top: 19px;
+        left: 20.5px;
+        color: $brand-primary;
+      }
+      .numSelect{
+        position: absolute;
+        top: 14px;
+        left: 20.5px;
+        color: $brand-primary;
+      }
     }
     .threadSubject{
-      @include inline-element(calc(80% - 45px), middle, 1.4rem);
+      @include inline-element(calc(80% - 40px), middle, 1.4rem);
       text-align: left;
+
+      @media (max-width: 800px) {
+        @include inline-element(100%, middle, 1.4rem);
+        text-align: left;
+      }
     }
     .threadAvatar{
       @include inline-element(40px, middle, 1.4rem);
@@ -307,14 +397,33 @@ input[type="radio"]{
         width: 50px;
         border-radius: 50%;
       }
+      @media (max-width: 800px) {
+       @include inline-element(40px, middle, 1.4rem);
+        text-align: left;
+        img {
+          width: 35px;
+          border-radius: 50%;
+        }
+      }
     }
     .threadComments{
-      @include inline-element(calc(10% - 45px), middle, 1.4rem);
+      @include inline-element(calc(10% - 40px), middle, 1.4rem);
       text-align: right;
+
+      @media (max-width: 800px) {
+       @include inline-element(20px, middle, 1.4rem);
+        text-align: left;
+      }
+
     }
     .threadDelete{
       @include inline-element(5px, middle, 1.4rem);
       text-align: right;
+
+      @media (max-width: 800px) {
+       @include inline-element(20px, middle, 1.4rem);
+        text-align: left;
+      }
     }
     &:hover{
       background: #FAFAFA;

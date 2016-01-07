@@ -10,6 +10,7 @@
 #  school_id         :integer
 #  conversation_id   :integer
 #  commitments_count :integer          default(0), not null
+#  sort              :string
 #
 # Indexes
 #

@@ -68,6 +68,10 @@ class User < ActiveRecord::Base
     conversation.likes.where(user_id: id).any?
   end
 
+  def favorites?(comment)
+    comment.favorites.where(user_id: id).any?
+  end
+
   def committed?
     self.commitments.any?
   end

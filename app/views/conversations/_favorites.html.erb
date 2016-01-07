@@ -1,0 +1,7 @@
+<% if user_signed_in? && current_user.favorites?(comment) %>
+  <%= link_to fa_icon("heart", style: "color: #f44336"), comment_favorite_path(comment), method: :delete %>
+  <small style="color: #2196F3"><%= comment.favorite_count %></small>
+<% else %>
+  <%= link_to fa_icon("heart-o", style: "color: #f44336;"), comment_favorite_path(comment), method: :post %>
+  <small><%= comment.favorite_count %></small>
+<% end %>

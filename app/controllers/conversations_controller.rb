@@ -1,3 +1,24 @@
+# == Schema Information
+#
+# Table name: conversations
+#
+#  id            :integer          not null, primary key
+#  user_id       :integer
+#  subject       :string
+#  created_at    :datetime         not null
+#  updated_at    :datetime         not null
+#  deleted_at    :datetime
+#  slug          :string
+#  likes_count   :integer          default(0), not null
+#  answers_count :integer          default(0), not null
+#  school_id     :integer
+#
+# Indexes
+#
+#  index_conversations_on_deleted_at  (deleted_at)
+#  index_conversations_on_slug        (slug) UNIQUE
+#
+
 class ConversationsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
   before_action :set_conversation, except: [:index, :new, :create]

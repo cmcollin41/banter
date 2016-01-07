@@ -1,19 +1,23 @@
-<div class="comments">
-  <div class="commentPic">
+<div class="flex-row">
+  <div class="flex-avatar">
     <%= image_tag comment.user.avatar.url(:icon) %>
+    <div class="favorites">
+      <%= render partial: "comments/favorites", locals: {comment: comment} %>
+    </div>
   </div>
-  <div class="commentBody">
+  <div class="flex-comment">
     <%= div_for comment do %>
       <p class="small"><strong><%= comment.user.name %></strong> - <%= local_time_ago comment.created_at %></p>
       <p><%= markdownify comment.body %></p>
     <% end %>
   </div>
-  <div class="commentDelete">
-    <% if comment.user == current_user %>
-    <%= link_to fa_icon("trash-o"), comment_path(comment), method: :delete  %>
+  <!-- <div class="commentDelete">
+    <%# if comment.user == current_user %>
+    <%#= link_to fa_icon("trash-o"), comment_path(comment), method: :delete  %>
     </br>
-    <% end %>
-    <%= link_to fa_icon("twitter"), "#" %>
-  </div>
+    <%# end %>
+    <%#= link_to fa_icon("twitter"), "#" %>
+  </div> -->
 </div>
+
 

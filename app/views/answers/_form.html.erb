@@ -1,7 +1,7 @@
 <%= form_for [@conversation, @answer] do |f| %>
   <div class="polls">
     <%= f.label :answer_one, @poll.option_a, for: "1", class: "optionA" %>
-    <%= f.radio_button :answer_one, @poll.option_a, id: "1", onclick:"this.form.submit();" %>
+    <%= f.radio_button :answer_one, @poll.option_a, id: "1", onclick:"this.form.submit();"%>
     <%= f.label :answer_two, @poll.option_b, for: "2", class: "optionB" %>
     <%= f.radio_button :answer_two, @poll.option_b, id: "2", onclick: "this.form.submit();" %>
   </div>

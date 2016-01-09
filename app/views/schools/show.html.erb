@@ -16,7 +16,7 @@
   <div class="col-md-2 col-md-offset-10">
     <%= form_tag(school_path, method: :get) do %>
       <div class="form-group">
-        <%= select_tag :sort, options_for_select(["Today", "Yesterday", "Past Week", "Past Month"], selected: params[:sort]), class: "form-control", onchange: "this.form.submit();" %>
+        <%= select_tag :sort, options_for_select(["Past 24 Hours", "Past Week", "Past Month"], selected: params[:sort]), class: "form-control", onchange: "this.form.submit();" %>
       </div>
     <% end %>
   </div>

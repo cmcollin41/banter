@@ -7,7 +7,7 @@ class NotificationMailer < ActionMailer::Base
 
     mail(
       to: "#{user.email}",
-      subject: "[Banter] New comment in #{comment.conversation.subject}"
+      subject: "[Banter] #{comment.user.name} mentioned you in '#{comment.conversation.subject}' conversation"
     )
   end
 end

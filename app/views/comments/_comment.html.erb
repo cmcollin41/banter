@@ -7,7 +7,7 @@
   </div>
   <div class="flex-comment">
     <%= div_for comment do %>
-      <p class="small"><strong><%= comment.user.name %></strong> - <%= local_time_ago comment.created_at %></p>
+      <p class="small"><strong><%= comment.user.name %></strong> <small>@<%=comment.user.username %></small> - <%= local_time_ago comment.created_at %></p>
       <p><%= markdownify comment.body %></p>
     <% end %>
   </div>

@@ -31,6 +31,7 @@
 #  avatar_content_type    :string
 #  avatar_file_size       :integer
 #  avatar_updated_at      :datetime
+#  username               :string
 #
 # Indexes
 #
@@ -88,6 +89,7 @@ class User < ActiveRecord::Base
     hash = Digest::MD5.hexdigest(email)
     "http://www.gravatar.com/avatar/#{hash}"
   end
+
 
   def name
     if deleted_at?

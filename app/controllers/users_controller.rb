@@ -31,6 +31,7 @@
 #  avatar_content_type    :string
 #  avatar_file_size       :integer
 #  avatar_updated_at      :datetime
+#  username               :string
 #
 # Indexes
 #
@@ -44,11 +45,10 @@
 
 class UsersController < ApplicationController
   before_action :authenticate_user!
-
+  before_action :admin?
 
   def index
     @user = current_user
-
     @users = User.order(id: :ASC)
     @import = User::Import.new
 
@@ -73,5 +73,11 @@ class UsersController < ApplicationController
 
     def user_import_params
       params.require(:user_import).permit(:file)
+    end
+
+    def admin?
+      if current_user.admin == false
+        redirect_to root_path
+      end
     end
 end

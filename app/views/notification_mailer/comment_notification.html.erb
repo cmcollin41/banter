@@ -1,3 +1,6 @@
-<h1>New post in <%= @comment.conversation.subject %></h1>
+<p><%= @comment.user.name %> said:</p>
+<blockquote>
+<%= @comment.body %>
+</blockquote>
 
 <p><%= link_to "Reply to this comment", conversation_url(@comment.conversation, anchor: dom_id(@comment)) %></p>

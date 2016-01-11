@@ -42,11 +42,4 @@ class Comment < ActiveRecord::Base
   def favorite_count
     self.favorites.count
   end
-
-  def send_notifications!
-    users = conversation.users.uniq - [user]
-    users.each do |user|
-      NotificationMailer.comment_notification(user, self).deliver_later
-    end
-  end
 end

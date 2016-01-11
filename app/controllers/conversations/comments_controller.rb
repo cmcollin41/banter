@@ -7,7 +7,6 @@ class Conversations::CommentsController < ApplicationController
     @comment.user = current_user
 
     if @comment.save
-      @comment.send_notifications!
       redirect_to conversation_path(@conversation, anchor: "comment_#{@comment.id}"), notice: "Successfully posted!"
     else
       redirect_to @conversation, alert: "Unable to save your comment"

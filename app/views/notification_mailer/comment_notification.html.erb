@@ -3,4 +3,4 @@
 <%= @comment.body %>
 </blockquote>
 
-<p><%= link_to "Reply to this comment", conversation_url(@comment.conversation, anchor: dom_id(@comment)) %></p>
+<%= link_to "Reply to this comment", conversation_url(@comment.conversation, anchor: dom_id(@comment)) %>

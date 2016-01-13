@@ -7,7 +7,7 @@ class ConversationMailer < ActionMailer::Base
 
     mail(
       to: "#{user.email}",
-      subject: "[Banter] #{comment.user.name} commented in '#{comment.conversation.subject}' conversation"
+      subject: "[Banter] #{comment.user.name} commented in '#{comment.conversation.subject}'"
     )
   end
 end

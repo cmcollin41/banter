@@ -17,10 +17,15 @@ class Comment < ActiveRecord::Base
   has_many :favorites, dependent: :destroy
   validates :body, presence: true
   after_create :notify_users
+  #after_create :notify_owner
 
   def user
     User.unscoped { super }
   end
+
+  # def notify_owner
+  #   ConversationMailer.comment_notification(user, self).deliver_later
+  # end
 
   def notify_users
     mentioned_users.each do |user|
@@ -30,7 +35,7 @@ class Comment < ActiveRecord::Base
 
   def mentions
     @mentions ||= begin
-      regex = /@([\w]+)/
+      regex = /@([\w.]+)/
       matches = body.scan(regex).flatten
     end
   end

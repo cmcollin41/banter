@@ -9,7 +9,7 @@
 #  updated_at    :datetime         not null
 #  deleted_at    :datetime
 #  slug          :string
-#  likes_count   :integer          default(0), not null
+#  upvotes_count :integer          default(0), not null
 #  answers_count :integer          default(0), not null
 #  school_id     :integer
 #
@@ -28,7 +28,7 @@ class ConversationsController < ApplicationController
   def index
     # @q = Conversation.search(params[:q])
     # @conversations = @q.result(distinct: true).order(likes_count: :desc)
-    @conversations = @school.conversations.all.order(likes_count: :desc)
+    @conversations = @school.conversations.all.order(upvotes_count: :desc)
   end
 
   def show

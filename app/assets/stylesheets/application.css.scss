@@ -74,13 +74,6 @@ body{
   margin: 0 auto;
 }
 
-.pushRight{
-  padding-left: 50px;
-
-   @media only screen and (max-width: 800px) {
-    padding-left: 15px;
-  }
-}
 
 
 input[type="radio"]{
@@ -109,56 +102,69 @@ input[type="radio"]{
 }
 
 .flexed{
-  margin-top: -70px;
-  margin-left: 50px;
+  //margin-left: 50px;
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  //justify-content:;
-  @media only screen and (max-width: 800px) {
-    margin-left: 0px;
-  }
+  flex-flow: row wrap;
+  width: 100%;
+  margin: 0 auto;
+  justify-content: center;
+  align-content: center;
 }
 
 .Utah-1{
   display: flex;
+  flex-flow: row wrap;
   align-items: center;
   justify-content: center;
   height: 50vh;
-  width: 50%;
+  width: 48%;
   background-color: #f44336;
   font-size: 4rem;
+  margin: 10px;
   a{
     color: white;
     text-decoration: none;
+  }
+  @media (max-width: 800px) {
+    width: 100%;
   }
 }
 
 .BYU-1{
   display: flex;
+  flex-flow: row wrap;
   align-items: center;
   justify-content: center;
   height: 50vh;
-  width: 50%;
+  width: 48%;
   background-color: #2196F3;
   font-size: 4rem;
+  margin: 10px;
   a{
     color: white;
     text-decoration: none;
+  }
+  @media (max-width: 800px) {
+    width: 100%;
   }
 }
 
 .Utah.St-1{
   display: flex;
+  flex-flow: row wrap;
   align-items: center;
   justify-content: center;
   height: 50vh;
-  width: 50%;
+  width: 48%;
   background-color: #0d47a1;
   font-size: 4rem;
+  margin: 10px;
   a{
     color: white;
     text-decoration: none;
+  }
+  @media (max-width: 800px) {
+    width: 100%;
   }
 }
 .more-coming{
@@ -166,27 +172,29 @@ input[type="radio"]{
   align-items: center;
   justify-content: center;
   height: 50vh;
-  width: 50%;
+  width: 48%;
   background-color: #000;
   font-size: 4rem;
+  margin: 10px;
   a{
     color: white;
     text-decoration: none;
+  }
+  @media (max-width: 800px) {
+    width: 100%;
   }
 }
 
-.ad-space{
-  display: flex;
-  align-items: center;
+.convoCount{
+  display:flex;
   justify-content: center;
-  height: 50vh;
-  width: 50%;
-  background-color: #000;
-  font-size: 4rem;
-  a{
-    color: white;
-    text-decoration: none;
-  }
+  align-items: center;
+  align-content: center;
+  text-align: center;
+  color: white;
+  font-size: 1.5rem;
+  padding: 5px;
+  width: 40%;
 }
 
 .conversationTopic{
@@ -316,7 +324,7 @@ input[type="radio"]{
   flex-flow: row nowrap;
   align-items: flex-start;
   min-height: 30px;
-  padding: 5px;
+  padding: 15px 5px;
   border-top: 1px solid #EEEEEE;
   .flex-avatar{
     display: flex;
@@ -341,6 +349,13 @@ input[type="radio"]{
     display: flex;
     //justify-content: center;
     flex-basis: 100%;
+  }
+}
+
+.comment{
+  &:target{
+    padding: 5px;
+    background-color: #ffc107;
   }
 }
 
@@ -676,12 +691,6 @@ input[type="radio"]{
   }
 }
 
-
-.navbar{
-  -moz-box-shadow:    3px 0px 5px 3px #EEEEEE;
-  -webkit-box-shadow: 3px 0px 5px 3px #EEEEEE;
-  box-shadow:         3px 0px 5px 3px #EEEEEE;
-}
 //////////////// MEDIA QUERIES ///////////////////////
 @media only screen 
   and (min-device-width: 414px) 

@@ -29,6 +29,7 @@ class Comment < ActiveRecord::Base
 
   def notify_users
     mentioned_users.each do |user|
+      Notification.create(recipient: user, actor: self.user, action: "mentioned you in a", notifiable: self)
       NotificationMailer.comment_notification(user, self).deliver_later
     end
   end

@@ -11,12 +11,11 @@
 // about supported directives.
 //
 //= require jquery
-//= require jquery.turbolinks
 //= require jquery_ujs
+//= require jquery.turbolinks
 //= require nprogress
 //= require nprogress-turbolinks
-//= require bootstrap
-//= require custom
 //= require local_time
-//= require_tree .
 //= require turbolinks
+//= require bootstrap
+//= require_tree .

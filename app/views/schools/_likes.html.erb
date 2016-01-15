@@ -1,9 +1,0 @@
-<% if user_signed_in? && current_user.likes?(conversation) %>
-  <%#= link_to fa_icon("chevron-up"), conversation_like_path(conversation), method: :delete, remote: :true %>
-  <span class="numSelect"><%= conversation.like_count %></span>
-<% else %>
-  <%= link_to conversation_like_path(conversation), method: :post, remote: :true do %>
-    <span class="fa fa-caret-up arrow"></span>
-    <span class="number"><%= conversation.like_count %></span>
-  <% end %>
-<% end %>

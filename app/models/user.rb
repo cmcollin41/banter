@@ -57,16 +57,17 @@ class User < ActiveRecord::Base
   validates :first_name, presence: true
   validates :last_name, presence: true
 
+  has_many :notifications, foreign_key: :recipient_id
   has_many :conversations, dependent: :destroy
   has_many :comments, dependent: :destroy
-  has_many :likes, dependent: :destroy
+  has_many :upvotes, dependent: :destroy
   has_many :polls, dependent: :destroy
   has_many :answers, dependent: :destroy
   has_many :commitments, dependent: :destroy
   has_many :invitations, :class_name => 'User', :as => :invited_by
 
-  def likes?(conversation)
-    conversation.likes.where(user_id: id).any?
+  def upvotes?(conversation)
+    conversation.upvotes.where(user_id: id).any?
   end
 
   def favorites?(comment)

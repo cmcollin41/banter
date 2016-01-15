@@ -1,4 +1,4 @@
-<div class="container pushRight">
+<div class="container">
   <div class="row">
     <div class="col-md-6" style="text-align: left;">
       <h1><%= @school.name %></h1>
@@ -24,8 +24,8 @@
 
 <% @school_conversations.each do |conversation| %>
   <div class="threads">
-    <div class="threadLikes" id="conversation_<%= conversation.id %>_likes">
-      <%= render partial: "likes", locals: {conversation: conversation} %>
+    <div class="threadLikes" id="conversation_<%= conversation.id %>_upvotes">
+      <%= render partial: "upvotes", locals: {conversation: conversation} %>
     </div>
     <div class="threadSubject">
       <h3><%= link_to conversation.subject, conversation %></h3>

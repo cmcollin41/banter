@@ -1,6 +1,6 @@
 # == Schema Information
 #
-# Table name: likes
+# Table name: upvotes
 #
 #  id              :integer          not null, primary key
 #  user_id         :integer
@@ -9,7 +9,7 @@
 #  updated_at      :datetime         not null
 #
 
-class Like < ActiveRecord::Base
+class Upvote < ActiveRecord::Base
   belongs_to :user
   belongs_to :conversation, :counter_cache => true
 end

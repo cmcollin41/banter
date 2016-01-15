@@ -3,8 +3,8 @@
     <div class="col-sm-12 col-md-10 col-md-offset-1">
 
     <div class="conversationTopic">
-        <div class="conversationLikes" id="conversation_<%= @conversation.id %>_likes">
-          <%= render partial: "likes", locals: {conversation: @conversation} %>
+        <div class="conversationLikes" id="conversation_<%= @conversation.id %>_upvotes">
+          <%= render partial: "upvotes", locals: {conversation: @conversation} %>
         </div>
         <div class="conversationSubject">
           <h1><%= @conversation.subject %></h1>

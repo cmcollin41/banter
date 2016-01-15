@@ -6,6 +6,8 @@ class Conversations::FavoritesController < ApplicationController
   def create
     @comment.favorites.where(user_id: current_user.id).first_or_create
 
+    # Notification.create(recipient: @comment.user, actor: current_user, action: "favorited", notifiable: @comment.favorites.last)
+    
     respond_to do |format|
       format.html {redirect_to request.referer}
       format.js

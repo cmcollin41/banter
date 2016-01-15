@@ -9,7 +9,7 @@
 #  updated_at    :datetime         not null
 #  deleted_at    :datetime
 #  slug          :string
-#  likes_count   :integer          default(0), not null
+#  upvotes_count :integer          default(0), not null
 #  answers_count :integer          default(0), not null
 #  school_id     :integer
 #
@@ -29,11 +29,11 @@ class Conversation < ActiveRecord::Base
   has_many :comments, dependent: :destroy
   has_many :polls, dependent: :destroy
   has_many :answers, dependent: :destroy
-  has_many :likes, dependent: :destroy
+  has_many :upvotes, dependent: :destroy
   has_many :users, through: :comments, dependent: :destroy
-  has_many :users, through: :likes, dependent: :destroy
-  has_many :users, through: :polls, dependent: :destroy
-  has_many :users, through: :answers, dependent: :destroy
+  #has_many :users, through: :likes, dependent: :destroy
+  #has_many :users, through: :polls, dependent: :destroy
+  #has_many :users, through: :answers, dependent: :destroy
 
 
   accepts_nested_attributes_for :comments
@@ -50,8 +50,8 @@ class Conversation < ActiveRecord::Base
     self.comments.count
   end
 
-  def like_count
-    self.likes.count
+  def upvote_count
+    self.upvotes.count
   end
 
   def answer_one

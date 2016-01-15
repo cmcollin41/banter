@@ -13,11 +13,16 @@ Rails.application.routes.draw do
       end
       resources :polls, module: :conversations
       resources :answers, module: :conversations
-      resource :like, module: :conversations
+      resource :upvote, module: :conversations
     end
     resource :commitment, module: :schools
   end
 
+  resources :notifications do
+    collection do
+      post :mark_as_read
+    end
+  end
 
   resources :users do
     collection do

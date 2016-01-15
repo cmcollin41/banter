@@ -1,9 +1,9 @@
 <div class="flex-row">
   <div class="flex-avatar">
     <%= image_tag comment.user.avatar.url(:icon) %>
-    <div class="favorites">
-      <%= render partial: "comments/favorites", locals: {comment: comment} %>
-    </div>
+<!--     <div class="favorites">
+      <%#= render partial: "comments/favorites", locals: {comment: comment} %>
+    </div> -->
   </div>
   <div class="flex-comment">
     <%= div_for comment do %>

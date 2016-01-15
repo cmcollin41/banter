@@ -1,4 +1,4 @@
-class Conversations::LikesController < ApplicationController
+class Conversations::UpvotesController < ApplicationController
   before_action :authenticate_user!
   before_action :set_conversation
 
@@ -8,8 +8,11 @@ class Conversations::LikesController < ApplicationController
 
 
   def create
-    @conversation.likes.where(user_id: current_user.id).first_or_create
+    @conversation.upvotes.where(user_id: current_user.id).first_or_create
 
+    (@conversation.users.uniq - [current_user]).each do |user|
+        Notification.create(recipient: user, actor: current_user, action: "gave your conversation an", notifiable: @conversation.upvotes.last)
+      end
     respond_to do |format|
       format.html {redirect_to @conversation}
       format.js
@@ -17,7 +20,7 @@ class Conversations::LikesController < ApplicationController
   end
 
   def destroy
-    @conversation.likes.where(user_id: current_user.id).destroy_all
+    @conversation.upvotes.where(user_id: current_user.id).destroy_all
 
     respond_to do |format|
       format.html {redirect_to @conversation}

@@ -3,20 +3,24 @@
   <div class="form-group">
     <%= f.text_field :subject, placeholder: "Subject", class: "form-control" %>
   </div>
-
-  <span class="btn btn-primary" id="pollsToggle" style="margin-bottom: 15px;"><i class="fa fa-pie-chart"></i></span>
-
-  <div id="polls" class="active">
-    <%= f.fields_for :polls do |p| %>
-      <div class="form-group">
-        <%= p.text_field :option_a, placeholder: "Option A", class: "form-control" %>
+  <div id="polls">
+    <p class="small">Poll Choices:</p>
+    <div class="row">
+      <%= f.fields_for :polls do |p| %>
+      <div class="col-md-6">
+        <div class="form-group">
+          <%= p.text_field :option_a, placeholder: "Option A", class: "form-control" %>
+        </div>
       </div>
-       <div class="form-group">
-        <%= p.text_field :option_b, placeholder: "Option B", class: "form-control" %>
+      <div class="col-md-6">
+         <div class="form-group">
+          <%= p.text_field :option_b, placeholder: "Option B", class: "form-control" %>
+        </div>
       </div>
-    <% end %>
+      <% end %>
+    </div>
   </div>
-
+  <hr>
   <%= f.fields_for :comments do |p| %>
     <div class="form-group">
       <%= p.text_area :body, placeholder: "Add a comment", rows: 10, class: "form-control" %>

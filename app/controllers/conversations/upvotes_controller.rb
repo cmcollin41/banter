@@ -10,9 +10,9 @@ class Conversations::UpvotesController < ApplicationController
   def create
     @conversation.upvotes.where(user_id: current_user.id).first_or_create
 
-    (@conversation.users.uniq - [current_user]).each do |user|
-        Notification.create(recipient: user, actor: current_user, action: "gave your conversation an", notifiable: @conversation.upvotes.last)
-      end
+    # (@conversation.users.uniq - [current_user]).each do |user|
+    #     Notification.create(recipient: user, actor: current_user, action: "gave your conversation an", notifiable: @conversation.upvotes.last)
+    #   end
     respond_to do |format|
       format.html {redirect_to @conversation}
       format.js

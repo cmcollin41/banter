@@ -1,10 +1,10 @@
 <div class="container">
-  <div class="row">
-    <div class="col-md-6" style="text-align: left;">
+  <div class="flex">
+    <div class="flex-items-left">
       <h1><%= @school.name %></h1>
     </div>
-    <div class="col-md-6" style="text-align: right;">
-      <div id="commitments">
+    <div class="flex-items-right">
+      <div class="commitments" id="commitments">
         <%= render partial: "commitments", locals: {school: @school} %>
       </div>
     </div>
@@ -16,7 +16,7 @@
   <div class="col-md-2 col-md-offset-10">
     <%= form_tag(school_path, method: :get) do %>
       <div class="form-group">
-        <%= select_tag :sort, options_for_select(["Past 24 Hours", "Past Week", "Past Month"], selected: params[:sort]), class: "form-control", onchange: "this.form.submit();" %>
+        <%= select_tag :sort, options_for_select(["Past Week", "Past Month", "Past 24 Hours"], selected: params[:sort]), class: "form-control", onchange: "this.form.submit();" %>
       </div>
     <% end %>
   </div>

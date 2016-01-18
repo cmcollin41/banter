@@ -29,12 +29,12 @@ class SchoolsController < ApplicationController
     @schools = School.all
     @school = School.friendly.find(params[:id])
 
-    if params[:sort] == "Past Week"
-      @school_conversations = @school.conversations.where("created_at < ? AND created_at >= ?", Time.zone.now, Time.zone.now - 168.hours).order("upvotes_count DESC, created_at DESC")
+    if params[:sort] == "Past 24 Hours"
+      @school_conversations = @school.conversations.where("created_at >= ?", Time.zone.now - 24.hours).order("upvotes_count DESC, created_at DESC")
     elsif params[:sort] == "Past Month"
       @school_conversations = @school.conversations.where("created_at < ? AND created_at >= ?", Time.zone.now, Time.zone.now - 720.hours).order("upvotes_count DESC, created_at DESC")
     else
-      @school_conversations = @school.conversations.where("created_at >= ?", Time.zone.now - 24.hours).order("upvotes_count DESC, created_at DESC")
+      @school_conversations = @school.conversations.where("created_at < ? AND created_at >= ?", Time.zone.now, Time.zone.now - 168.hours).order("upvotes_count DESC, created_at DESC")
     end
 
   end

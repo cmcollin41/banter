@@ -22,7 +22,7 @@ class School < ActiveRecord::Base
   extend FriendlyId
   friendly_id :name, use: :slugged
   
-  has_many :conversations, dependent: :destroy
+  # has_many :conversations, dependent: :destroy
   has_many :commitments, dependent: :destroy
 
 end

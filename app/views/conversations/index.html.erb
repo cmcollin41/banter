@@ -1,11 +1,8 @@
 
 <div class="container">
   <div class="conversations">
-    <h5 class="week">Today&nbsp;&nbsp;<span class="text-mute small"><%= Time.now.strftime('%b, %e') %>.</span></h5>
+   <!--  <h5 class="week">Today&nbsp;&nbsp;<span class="text-mute small"><%= Time.now.strftime('%b, %e') %>.</span></h5> -->
+   <h4>Content</h4>
     <%= render @conversations %>
-  </div>
-  <div class="conversations">
-    <h5 class="week">Everything Else</h5>
-    <%#= render @conversations.past_convos %>
   </div>
 </div>

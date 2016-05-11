@@ -22,7 +22,7 @@ $brand-primary: #2196F3;
 $navbar-default-bg: white;
 $navbar-default-color: $brand-primary;
 $navbar-default-link-color: $brand-primary;
-@import url(https://fonts.googleapis.com/css?family=Roboto);
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700);
 @import "font-awesome";
 @import "bootstrap";
 
@@ -67,6 +67,7 @@ body{
   background: #ffffff;
   margin-top: 70px;
   padding: 0px;
+  font-family: Roboto;
 }
 
 .center{
@@ -116,7 +117,12 @@ input[type="radio"]{
 }
 
 .author{
-  margin: 20px 0px;
+  margin: 5px 0px;
+  img{
+    width:35px;
+    border-radius: 50%;
+    text-align: center;
+  }
 }
 
 
@@ -233,10 +239,16 @@ input[type="radio"]{
 }
 
 .conversationTopic{
-  @include inline-wrapper();
+  display: flex;
+  flex-flow: row wrap;
+  align-items: flex-start;
   padding: 25px 0px 10px 0px;
   .conversationLikes{
-    @include inline-element(60px, middle, 1.6rem);
+    display: flex;
+    flex-flow: column wrap;
+    align-items: flex-start;
+    flex: 0 0 50px;
+
     position: relative;
     text-align: center;
     margin-top: 18px;
@@ -275,11 +287,18 @@ input[type="radio"]{
     }
   }
   .conversationSubject{
-    @include inline-element(calc(100% - 60px), middle, 1.6rem);
-    text-align: left;
-    margin-top: 8px;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex: 1 1 calc(100% - 50px);
     color: rgba(#000,0.89);
+    padding-left: 10px;
   }
+}
+
+.conversationBody{
+
 }
 
 .polls{

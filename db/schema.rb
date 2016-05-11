@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160114041949) do
+ActiveRecord::Schema.define(version: 20160119012411) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -51,6 +51,7 @@ ActiveRecord::Schema.define(version: 20160114041949) do
     t.integer  "upvotes_count", default: 0, null: false
     t.integer  "answers_count", default: 0, null: false
     t.integer  "school_id"
+    t.text     "body"
   end
 
   add_index "conversations", ["deleted_at"], name: "index_conversations_on_deleted_at", using: :btree

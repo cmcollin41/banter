@@ -12,6 +12,7 @@
 #  upvotes_count :integer          default(0), not null
 #  answers_count :integer          default(0), not null
 #  school_id     :integer
+#  body          :text
 #
 # Indexes
 #

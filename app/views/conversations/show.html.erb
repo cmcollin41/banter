@@ -8,6 +8,8 @@
         </div>
         <div class="conversationSubject">
           <h1><%= @conversation.subject %></h1>
+          <%= markdownify @conversation.body %>
+          <p class="text-muted small author">Created by <%= @conversation.user.name %></p>
         </div>
     </div>
 
@@ -15,7 +17,6 @@
       <%= render partial: "answers/answer" %>
     <% end %>
 
-    <p class="text-muted small author">Created by <%= @conversation.user.name %></p>
 
 
     <%= render @comments, locals: {conversation: @conversation} %>

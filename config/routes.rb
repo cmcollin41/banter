@@ -6,7 +6,7 @@ Rails.application.routes.draw do
       put 'users/:id' => 'devise/registrations#update', :as => 'user_registration'            
     end
 
-  resources :schools, shallow: true do 
+  # resources :schools, shallow: true do 
     resources :conversations do
       resources :comments, module: :conversations do
         resource :favorite
@@ -16,7 +16,7 @@ Rails.application.routes.draw do
       resource :upvote, module: :conversations
     end
     resource :commitment, module: :schools
-  end
+  # end
 
   resources :notifications do
     collection do
@@ -30,5 +30,5 @@ Rails.application.routes.draw do
     end
   end
 
-  root to: "schools#index"
+  root to: "conversations#index"
 end

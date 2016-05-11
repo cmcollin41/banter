@@ -37,6 +37,8 @@ class SchoolsController < ApplicationController
       @school_conversations = @school.conversations.where("created_at < ? AND created_at >= ?", Time.zone.now, Time.zone.now - 168.hours).order("upvotes_count DESC, created_at DESC")
     end
 
+    #@users = User.all.where(User.committed)
+
   end
 
 

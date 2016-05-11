@@ -1,5 +1,5 @@
 <% if user_signed_in? && current_user.upvotes?(conversation) %>
-  <%#= link_to fa_icon("chevron-up"), conversation_like_path(conversation), method: :delete, remote: :true %>
+  <%#= link_to fa_icon("chevron-up"), conversation_upvote_path(conversation), method: :delete, remote: :true %>
   <span class="numSelect"><%= conversation.upvote_count %></span>
 <% else %>
   <%= link_to conversation_upvote_path(conversation), method: :post, remote: :true do %>
